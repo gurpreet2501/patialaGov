@@ -1,0 +1,13 @@
+[26-Dec-2016 06:09:45 America/Denver] PHP Fatal error:  Class 'Capsule' not found in /home1/desktopi/public_html/softy/application/config/database.php on line 201
+[26-Dec-2016 06:14:09 America/Denver] PHP Fatal error:  Call to a member function num_rows() on boolean in /home1/desktopi/public_html/softy/application/models/tank_auth/Users.php on line 71
+[10-Jan-2017 09:32:18 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
+[16-Jan-2017 02:50:33 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
+[16-Jan-2017 02:57:03 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
+[26-Feb-2017 05:05:42 America/Denver] PHP Fatal error:  Call to a member function num_rows() on boolean in /home1/desktopi/public_html/softy/system/database/DB_query_builder.php on line 1391
+[08-Mar-2017 09:26:30 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
+[08-Mar-2017 09:26:59 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
+[08-Mar-2017 09:27:00 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
+[08-Mar-2017 09:27:02 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
+[08-Mar-2017 09:27:03 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
+[08-Mar-2017 09:27:16 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
+[10-Mar-2017 03:52:58 America/Denver] PHP Fatal error:  Class 'App\Models\Dispatch' not found in /home1/desktopi/public_html/softy/application/controllers/Data.php on line 106
