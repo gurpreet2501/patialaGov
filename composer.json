@@ -1,30 +1,26 @@
 {
-	"description": "The CodeIgniter framework",
-	"name": "codeigniter/framework",
-	"type": "project",
-	"homepage": "http://codeigniter.com",
-	"license": "MIT",
-	"support": {
-		"forum": "http://forum.codeigniter.com/",
-		"wiki": "https://github.com/bcit-ci/CodeIgniter/wiki",
-		"irc": "irc://irc.freenode.net/codeigniter",
-		"source": "https://github.com/bcit-ci/CodeIgniter"
-	},
-	"require": {
-		"php": ">=5.2.4",
-		"illuminate/database": "5.3.*",
-		"illuminate/container": "^5.3",
-		"illuminate/events": "^5.3",
-		"robmorgan/phinx": "^0.6.5"
-	},
-	"require-dev": {
-		"mikey179/vfsStream": "1.1.*",
-		"fzaninotto/faker": "^1.5"
-	},
- "autoload": {
+    "name": "agsoft/marfed",
+    "authors": [
+        {
+            "name": "Arshdeep79",
+            "email": "arshdeep79@gmail.com"
+        }
+    ],
+    "require": {
+        "robmorgan/phinx": "^0.6.2",
+        "illuminate/database": "^5.2",
+        "illuminate/events": "^5.2",
+        "illuminate/container": "^5.2",
+        "anahkiasen/former": "^4.0",
+        "pimple/pimple": "^3.0",
+        "patricktalmadge/bootstrapper": "^5.9",
+        "symfony/dependency-injection": "^3.1",
+        "illuminate/pagination": "^5.2",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
       "psr-4": {
         "App\\": "App/"
       }
     }
-
 }

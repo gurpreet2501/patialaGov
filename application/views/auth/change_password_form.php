@@ -1,4 +1,5 @@
 <?php
+$this->load->view('partials/header');
 $old_password = array(
 	'name'	=> 'old_password',
 	'id'	=> 'old_password',

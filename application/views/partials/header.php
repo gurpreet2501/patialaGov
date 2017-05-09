@@ -3,6 +3,10 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="<?=base_url('css/slider.css')?>">
+	<!-- <link rel="stylesheet" type="text/css" href="<?php //base_url('css/date-picker.css') ?>"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="<?php //base_url('css/jquery-ui.css')?>"> -->
+	<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="<?=base_url('css/bootstrap.min.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?=base_url('css/style.css')?>">
 	<title>Official Website Of District Patiala - Homepage</title>
 	</head>
@@ -13,10 +17,11 @@
 	<div class="header">
 		<div class="row">
 			<div class="col-xs-8">
-				<a href="index.html"><h1 class="site-title">Official Website Of District Patiala</h1></a>
+				<a href="/"><h1 class="site-title">Official Website Of District Patiala</h1></a>
 			</div>
 		
 			<div class="col-xs-4">
+				<div class="login_link"><a href="<?=site_url('admin')?>">Login</a></div>
 				<div class="header-right-img">
 					<img src="<?=base_url('images/pblogo.bmp')?>"  class="header-img-2" /> 
 					<img src="<?=base_url('images/banner5.jpg')?>"  class="header-img" /> 
@@ -31,7 +36,7 @@
 			    <!-- Brand and toggle get grouped for better mobile display -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
-			        <li><a href="index.html">Home</a></li>
+			        <li><a href="/">Home</a></li>
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Patiala <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
@@ -91,5 +96,10 @@
 			</nav>
 		</div>
 	</div>
+   <?php if($msg = lako::get('flash')->get('global')):?>
+      <div class="alert alert-<?=htmlspecialchars($msg['type'])?>" role="alert">
+        <p><?=htmlentities($msg['msg']);?></p>
+      </div>
+    <?php endif; ?>
 
 <!-- Header Ends-->

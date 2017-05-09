@@ -86,14 +86,18 @@ class lako_cart extends lako_lib_base{
    * @return void
    */
   function remove($key = null){
-    $sess_cart = lako::get('session')->get('lako_cart');
     
+
+    $sess_cart = lako::get('session')->get('lako_cart');
+  
+    $sess_cart = $sess_cart['products'];
+
     if(is_null($key))
       $sess_cart = array();
     else
       unset($sess_cart[$key]);
-      
-    lako::get('session')->set('lako_cart',$sess_cart);
+    
+    lako::get('session')->set('lako_cart', $sess_cart['products']);
   }
   
   /**

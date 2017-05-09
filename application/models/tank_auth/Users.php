@@ -49,11 +49,13 @@ class Users extends CI_Model
 	 */
 	function get_user_by_login($login)
 	{
-		$this->db->where('LOWER(username)=', strtolower($login));
+		$this->db->where('username', $login);
 		$this->db->or_where('LOWER(email)=', strtolower($login));
-
+  
 		$query = $this->db->get($this->table_name);
-		if ($query->num_rows() == 1) return $query->row();
+		if ($query->num_rows() == 1) {
+			 return $query->row();
+		}
 		return NULL;
 	}
 
@@ -65,7 +67,7 @@ class Users extends CI_Model
 	 */
 	function get_user_by_username($username)
 	{
-		$this->db->where('LOWER(username)=', strtolower($username));
+		$this->db->where('username', $username);
 
 		$query = $this->db->get($this->table_name);
 		if ($query->num_rows() == 1) return $query->row();
@@ -96,7 +98,7 @@ class Users extends CI_Model
 	function is_username_available($username)
 	{
 		$this->db->select('1', FALSE);
-		$this->db->where('LOWER(username)=', strtolower($username));
+		$this->db->where('username', $username);
 
 		$query = $this->db->get($this->table_name);
 		return $query->num_rows() == 0;

@@ -1382,7 +1382,7 @@ TableTools.prototype = {
 		{
 			for ( i=0, iLen=dt.aoColumns.length ; i<iLen ; i++ )
 			{
-				aColumns.push( dt.aoColumns[i].bSortable ? true : false );
+				aColumns.push( dt.aoColumns[i].bSortable ? false : false );
 			}
 		}
 		else /* all */

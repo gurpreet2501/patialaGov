@@ -117,7 +117,7 @@ abstract class AbstractCommand extends Command
     /**
      * Gets the config.
      *
-     * @return ConfigInterface
+     * @return Config
      */
     public function getConfig()
     {

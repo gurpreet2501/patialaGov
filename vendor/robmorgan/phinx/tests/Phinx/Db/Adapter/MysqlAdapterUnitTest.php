@@ -56,14 +56,6 @@ class MysqlAdapterTester extends MysqlAdapter
 
 class MysqlAdapterUnitTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @var MysqlAdapterTester
-     */
-    private $adapter;
-
-    private $conn;
-    
-    private $result;
 
     public function setUp()
     {

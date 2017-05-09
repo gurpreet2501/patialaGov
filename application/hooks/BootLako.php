@@ -10,6 +10,7 @@ class BootEloquent{
     $ci->load->database();
 
     $capsule = new Capsule;
+   
     $capsule->addConnection(array(
         'driver'    => $ci->db->dbdriver,
         'host'      => $ci->db->hostname,

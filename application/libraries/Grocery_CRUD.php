@@ -16,7 +16,7 @@
  * @package    	grocery CRUD
  * @copyright  	Copyright (c) 2010 through 2014, John Skoumbourdis
  * @license    	https://github.com/scoumbourdis/grocery-crud/blob/master/license-grocery-crud.txt
- * @version    	1.5.2
+ * @version    	1.5.0
  * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
  */
 
@@ -468,7 +468,7 @@ class grocery_CRUD_Field_Types
  *
  * @package    	grocery CRUD
  * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
- * @version    	1.5.2
+ * @version    	1.5.0
  * @link		http://www.grocerycrud.com/documentation
  */
 class grocery_CRUD_Model_Driver extends grocery_CRUD_Field_Types
@@ -1383,13 +1383,7 @@ class grocery_CRUD_Model_Driver extends grocery_CRUD_Field_Types
 				header('Access-Control-Allow-Headers: X-File-Name, X-File-Type, X-File-Size');
 
 				$allowed_files = $this->config->file_upload_allow_file_types;
-				
-		                $reg_exp = '';
-		                if(!empty($upload_info->allowed_file_types)){
-		                    $reg_exp = '/(\\.|\\/)('.$upload_info->allowed_file_types.')$/i';
-		                }else{
-		                    $reg_exp = '/(\\.|\\/)('.$allowed_files.')$/i';
-		                }
+				$reg_exp = '/(\\.|\\/)('.$allowed_files.')$/i';
 
 				$max_file_size_ui = $this->config->file_upload_max_file_size;
 				$max_file_size_bytes = $this->_convert_bytes_ui_to_bytes($max_file_size_ui);
@@ -1517,7 +1511,7 @@ class grocery_CRUD_Model_Driver extends grocery_CRUD_Field_Types
  *
  * @package    	grocery CRUD
  * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
- * @version    	1.5.2
+ * @version    	1.5.0
  */
 class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
 {
@@ -2117,12 +2111,10 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
 		}
 
 		if ($this->unset_bootstrap) {
-			unset($js_files[sha1($this->default_theme_path.'/bootstrap/js/bootstrap/dropdown.js')]);
-			unset($js_files[sha1($this->default_theme_path.'/bootstrap/js/bootstrap/modal.js')]);
-			unset($js_files[sha1($this->default_theme_path.'/bootstrap/js/bootstrap/dropdown.min.js')]);
-			unset($js_files[sha1($this->default_theme_path.'/bootstrap/js/bootstrap/modal.min.js')]);
-			unset($css_files[sha1($this->default_theme_path.'/bootstrap/css/bootstrap/bootstrap.css')]);
-			unset($css_files[sha1($this->default_theme_path.'/bootstrap/css/bootstrap/bootstrap.min.css')]);
+			unset($js_files[sha1($this->default_theme_path.'/twitter-bootstrap/js/libs/bootstrap/bootstrap.min.js')]);
+			unset($js_files[sha1($this->default_theme_path.'/twitter-bootstrap/js/libs/bootstrap/application.js')]);
+			unset($css_files[sha1($this->default_theme_path.'/twitter-bootstrap/css/bootstrap-responsive.min.css')]);
+			unset($css_files[sha1($this->default_theme_path.'/twitter-bootstrap/css/bootstrap.min.css')]);
 		}
 
 		if($this->echo_and_die === false)
@@ -2662,11 +2654,8 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
 		</span>';
 
 		$this->set_css($this->default_css_path.'/jquery_plugins/file_upload/fileuploader.css');
-        
-        #$file_url = base_url().$field_info->extras->upload_path.'/'.$value;
 
-        // NOTE: crud_image_path_fix is defined in global_helper.php
-        $file_url = crud_image_path_fix($field_info->extras->upload_path, $value);
+		$file_url = base_url().$field_info->extras->upload_path.'/'.$value;
 
 		$input .= "<div id='uploader_$unique' rel='$unique' class='grocery-crud-uploader' style='$uploader_display_none'></div>";
 		$input .= "<div id='success_$unique' class='upload-success-url' style='$file_display_none padding-top:7px;'>";
@@ -2970,7 +2959,7 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
  *
  * @package    	grocery CRUD
  * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
- * @version    	1.5.2
+ * @version    	1.5.0
  */
 class grocery_CRUD_States extends grocery_CRUD_Layout
 {
@@ -3399,7 +3388,7 @@ class grocery_CRUD_States extends grocery_CRUD_Layout
  * @package    	grocery CRUD
  * @copyright  	Copyright (c) 2010 through 2014, John Skoumbourdis
  * @license    	https://github.com/scoumbourdis/grocery-crud/blob/master/license-grocery-crud.txt
- * @version    	1.5.2
+ * @version    	1.5.0
  * @author     	John Skoumbourdis <scoumbourdisj@gmail.com>
  */
 
@@ -3422,7 +3411,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 	 *
 	 * @var	string
 	 */
-	const	VERSION = "1.5.2";
+	const	VERSION = "1.5.0";
 
 	const	JQUERY 			= "jquery-1.11.1.min.js";
 	const	JQUERY_UI_JS 	= "jquery-ui-1.10.3.custom.min.js";
@@ -3927,6 +3916,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 		return $this;
 	}
 
+
 	/**
 	 *
 	 *  The fields that user can see . It is only for the edit form
@@ -4006,7 +3996,8 @@ class Grocery_CRUD extends grocery_CRUD_States
 	{
 		list($php_day, $php_month, $php_year) = array('d','m','Y');
 		list($js_day, $js_month, $js_year) = array('dd','mm','yy');
-		list($ui_day, $ui_month, $ui_year) = array($this->l('ui_day'), $this->l('ui_month'), $this->l('ui_year'));
+		list($ui_day, $ui_month, $ui_year) = array('dd','mm','yyyy');
+//@todo ui_day, ui_month, ui_year has to be lang strings
 
 		$date_format = $this->config->date_format;
 		switch ($date_format) {
@@ -5147,12 +5138,12 @@ class Grocery_CRUD extends grocery_CRUD_States
 	 * @param string $upload_path
      * @return Grocery_CRUD
 	 */
-	public function set_field_upload($field_name, $upload_dir = '', $allowed_file_types = '')
+	public function set_field_upload($field_name, $upload_dir = '')
 	{
 		$upload_dir = !empty($upload_dir) && substr($upload_dir,-1,1) == '/'
 						? substr($upload_dir,0,-1)
 						: $upload_dir;
-		$upload_dir = !empty($upload_dir) ? $upload_dir : '../images/';
+		$upload_dir = !empty($upload_dir) ? $upload_dir : 'assets/uploads/files';
 
 		/** Check if the upload Url folder exists. If not then throw an exception **/
 		if (!is_dir(FCPATH.$upload_dir)) {
@@ -5163,7 +5154,6 @@ class Grocery_CRUD extends grocery_CRUD_States
 		$this->upload_fields[$field_name] = (object) array(
 				'field_name' => $field_name,
 				'upload_path' => $upload_dir,
-				'allowed_file_types' => $allowed_file_types,
 				'encrypted_field_name' => $this->_unique_field_name($field_name));
 		return $this;
 	}

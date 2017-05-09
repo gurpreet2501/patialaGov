@@ -80,14 +80,4 @@
 
 
 	/* Added in version 1.4 */
-	$lang['list_view'] = 'Харах';
-
-	/* Added in version 1.5.1 */
-	$lang['ui_day'] = 'dd';
-	$lang['ui_month'] = 'mm';
-	$lang['ui_year'] = 'yyyy';
-
-
-	/* Added in version 1.5.2 */
-	$lang['list_more'] = 'More';
-
+	$lang['list_view'] = 'View';

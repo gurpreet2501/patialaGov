@@ -204,7 +204,7 @@ class Create extends AbstractCommand
         // Determine the appropriate mechanism to get the template
         if ($creationClassName) {
             // Get the template from the creation class
-            $creationClass = new $creationClassName($input, $output);
+            $creationClass = new $creationClassName();
             $contents = $creationClass->getMigrationTemplate();
         } else {
             // Load the alternative template if it is defined.

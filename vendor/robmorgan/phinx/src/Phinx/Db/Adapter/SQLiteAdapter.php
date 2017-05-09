@@ -417,11 +417,12 @@ class SQLiteAdapter extends PdoAdapter implements AdapterInterface
 
         $this->execute(sprintf('ALTER TABLE %s RENAME TO %s', $tableName, $tmpTableName));
 
+        $val = end($columns);
+        $replacement = ($val['name'] === $columnName) ? "%s %s" : "%s %s,";
         $sql = preg_replace(
-            sprintf("/%s[^,]+([,)])/", $this->quoteColumnName($columnName)),
-            sprintf('%s %s$1', $this->quoteColumnName($newColumn->getName()), $this->getColumnSqlDefinition($newColumn)),
-            $sql,
-            1
+            sprintf("/%s[^,]*[^\)]/", $this->quoteColumnName($columnName)),
+            sprintf($replacement, $this->quoteColumnName($newColumn->getName()), $this->getColumnSqlDefinition($newColumn)),
+            $sql
         );
 
         $this->execute($sql);

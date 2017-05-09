@@ -7,8 +7,8 @@
 | These details are used in emails sent by authentication library.
 |--------------------------------------------------------------------------
 */
-$config['website_name'] = 'Your project';
-$config['webmaster_email'] = 'webmaster@your-site.com';
+$config['website_name'] = 'Markfed';
+$config['webmaster_email'] = 'info@markfed.com';
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +19,7 @@ $config['webmaster_email'] = 'webmaster@your-site.com';
 | 'phpass_hash_strength' = Password hash strength.
 |--------------------------------------------------------------------------
 */
-$config['phpass_hash_portable'] = TRUE;
+$config['phpass_hash_portable'] = true;
 $config['phpass_hash_strength'] = 8;
 
 /*
@@ -40,8 +40,8 @@ $config['phpass_hash_strength'] = 8;
 |--------------------------------------------------------------------------
 */
 $config['allow_registration'] = TRUE;
-$config['captcha_registration'] = False;
-$config['email_activation'] = False;
+$config['captcha_registration'] = FALSE;
+$config['email_activation'] = FALSE;
 $config['email_activation_expire'] = 60*60*24*2;
 $config['email_account_details'] = TRUE;
 $config['use_username'] = TRUE;
@@ -69,11 +69,11 @@ $config['password_max_length'] = 20;
 |--------------------------------------------------------------------------
 */
 $config['login_by_username'] = TRUE;
-$config['login_by_email'] = False;
+$config['login_by_email'] = TRUE;
 $config['login_record_ip'] = TRUE;
 $config['login_record_time'] = TRUE;
-$config['login_count_attempts'] = False;
-$config['login_max_attempts'] = 5;
+$config['login_count_attempts'] = TRUE;
+$config['login_max_attempts'] = 5000;
 $config['login_attempt_expire'] = 60*60*24;
 
 /*
@@ -138,7 +138,7 @@ $config['recaptcha_private_key'] = '';
 | (except 'ci_sessions' table).
 |--------------------------------------------------------------------------
 */
-$config['db_table_prefix'] = 'tank_auth_';
+$config['db_table_prefix'] = '';
 
 
 /* End of file tank_auth.php */

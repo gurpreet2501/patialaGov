@@ -1,11 +1,4 @@
-<h3>Website Seach</h3>
-		<div class="search-box clearfix">
-			 <form class="navbar-form navbar-left">
-	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Search">
-	        </div>
-      	</form>
-		</div>
+		<a href="<?=site_url('employeeSearch')?>"><h3 class="text-center"><span class="label label-success"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Employee Search</span></h3></a>
 		<div class="sp-20"></div>
 		<ul class="list-group">
 			<li class="list-group-item"><a href="http://patiala.gov.in/4135.pdf">Credibility of Electronic Voting Machines </a><span class="label label-danger">PDF</span></li>

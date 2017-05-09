@@ -6,10 +6,10 @@ $capsule = new Capsule;
 
 $capsule->addConnection([
     'driver'    => 'mysql',
-    'host'      => 'localhost',
-    'database'  => 'desktopi_test',
-    'username'  => 'desktopi_iowiki',
-    'password'  => '$$$khalsa$$$',
+    'host'      => env('localhost','localhost'),
+    'database'  => env('database','markf7ux_dev_markfed'),
+    'username'  => env('username','markf7ux_AgTest'),
+    'password'  => env('password','$$$Cash2add2501$$$'),
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',

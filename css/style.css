@@ -105,7 +105,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #1F5B98;
+
   text-decoration: none;
 }
 a:hover,
@@ -326,6 +326,7 @@ hr {
 .header{
   background: rgb(255, 165, 0);
   min-height: 158px;
+  padding:10px;
 }
 .menu {
     background: #FDC414;
@@ -418,7 +419,7 @@ img.header-img-2 {
 }*/
 .navbar-default {
     border-color: #e7e7e7;
-    background: url(https://india.gov.in/sites/all/themes/adaptivetheme/npi_adaptive/images/bg-noise.png);
+    /*background: url(https://india.gov.in/sites/all/themes/adaptivetheme/npi_adaptive/images/bg-noise.png);*/
 }
 .navbar{
   border: none;
@@ -451,4 +452,25 @@ ul.nav.navbar-nav li a {
 }
 .zoom-in:hover{
   width:100%;
+}
+a:hover{
+  text-decoration: none !important;
+}
+
+.login_link a{
+    color: #fff;
+}
+.login_link {
+    text-align: right;
+}
+nav.navbar.navbar-default {
+    background: #2F70C4;
+}
+span.glyphicon.glyphicon-search {
+    margin-right: 10px;
+    color: #555;
+}
+.label-success {
+    background-color: #5cb85c;
+    padding: 9px;
 }

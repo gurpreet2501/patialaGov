@@ -1,4 +1,9 @@
 <?php
+// INSERT INTO shipped_items
+// (order_item_id,qty,plant_id,order_id,shipment_domestic_id,created_at)
+// select order_items.id as order_item_id, order_items.qty as qty, orders.plant_id as plant_id, orders.id as order_id, shipment_dom.id as shipment_domestic_id, shipment_dom.date as created_at from order_items left join shipped_items on shipped_items.order_item_id = order_items.id left join orders on order_items.order_id=orders.id left join (select MAX(id) as id,order_id, `date` from shipment_domestic group by order_id ORDER BY `id` DESC) as shipment_dom on orders.id=shipment_dom.order_id where orders.plant_id=17 AND orders.id IS NOT NULL AND orders.status='Completed' AND shipped_items.id IS NULL AND shipment_dom.order_id IS NOT NULL
+// exit;
+
 /**
  * CodeIgniter
  *
@@ -12,11 +17,11 @@
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is 
+ * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
  *
  * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
+ * all copies or substantial portions of the Software. 
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -36,9 +41,6 @@
  * @filesource
  */
 
-
-require_once 'vendor/autoload.php';
-require_once __DIR__.'/boot-eloquent.php';
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -56,12 +58,14 @@ require_once __DIR__.'/boot-eloquent.php';
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-// require_once 'vendor/autoload.php';
+	//define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
-if(isset($_SERVER['SERVER_ADDR']) && ($_SERVER['SERVER_ADDR'] == '127.0.0.1'))
+  require_once __DIR__.'/vendor/autoload.php';
   define('ENVIRONMENT', 'development');
-else
-  define('ENVIRONMENT', 'production');
+  date_default_timezone_set('Asia/Calcutta');
+	require_once __DIR__.'/boot-request.php';
+	require_once __DIR__.'/boot-extra.php';
+	require_once __DIR__.'/boot-eloquent.php';
 
 
 /*
@@ -75,20 +79,13 @@ else
 switch (ENVIRONMENT)
 {
 	case 'development':
+		error_reporting(-1);
 		ini_set('display_errors', 1);
-    if (version_compare(PHP_VERSION, '5.3', '>='))
-		{
-			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
-		}
-		else
-		{
-			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
-		}
 	break;
 
 	case 'testing':
 	case 'production':
-		ini_set('display_errors', 1);
+		ini_set('display_errors', 0);
 		if (version_compare(PHP_VERSION, '5.3', '>='))
 		{
 			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);

@@ -1,0 +1,4 @@
+environment.php
+web_migrate.php
+phinx.yml
+*.sql

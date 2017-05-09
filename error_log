@@ -1,13 +1,47 @@
-[26-Dec-2016 06:09:45 America/Denver] PHP Fatal error:  Class 'Capsule' not found in /home1/desktopi/public_html/softy/application/config/database.php on line 201
-[26-Dec-2016 06:14:09 America/Denver] PHP Fatal error:  Call to a member function num_rows() on boolean in /home1/desktopi/public_html/softy/application/models/tank_auth/Users.php on line 71
-[10-Jan-2017 09:32:18 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
-[16-Jan-2017 02:50:33 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
-[16-Jan-2017 02:57:03 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
-[26-Feb-2017 05:05:42 America/Denver] PHP Fatal error:  Call to a member function num_rows() on boolean in /home1/desktopi/public_html/softy/system/database/DB_query_builder.php on line 1391
-[08-Mar-2017 09:26:30 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
-[08-Mar-2017 09:26:59 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
-[08-Mar-2017 09:27:00 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
-[08-Mar-2017 09:27:02 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
-[08-Mar-2017 09:27:03 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
-[08-Mar-2017 09:27:16 America/Denver] PHP Fatal error:  Call to a member function result() on boolean in /home1/desktopi/public_html/softy/application/models/Grocery_crud_model.php on line 87
-[10-Mar-2017 03:52:58 America/Denver] PHP Fatal error:  Class 'App\Models\Dispatch' not found in /home1/desktopi/public_html/softy/application/controllers/Data.php on line 106
+[28-Sep-2015 16:57:12 UTC] PHP Notice:  getimagesize(): Read error! in /home1/desktopi/public_html/markfedonline/timthumb.php on line 498
+[28-Sep-2015 16:57:38 UTC] PHP Notice:  getimagesize(): Read error! in /home1/desktopi/public_html/markfedonline/timthumb.php on line 498
+[28-Sep-2015 17:08:08 UTC] PHP Notice:  getimagesize(): Read error! in /home1/desktopi/public_html/markfedonline/timthumb.php on line 498
+[28-Sep-2015 17:10:17 UTC] PHP Notice:  getimagesize(): Read error! in /home1/desktopi/public_html/markfedonline/timthumb.php on line 498
+[28-Sep-2015 17:23:42 UTC] PHP Notice:  getimagesize(): Read error! in /home1/desktopi/public_html/markfedonline/timthumb.php on line 498
+[28-Sep-2015 17:25:52 UTC] PHP Notice:  getimagesize(): Read error! in /home1/desktopi/public_html/markfedonline/timthumb.php on line 498
+[28-Sep-2015 17:26:10 UTC] PHP Notice:  getimagesize(): Read error! in /home1/desktopi/public_html/markfedonline/timthumb.php on line 498
+[28-Sep-2015 17:35:56 UTC] PHP Notice:  getimagesize(): Read error! in /home1/desktopi/public_html/markfedonline/timthumb.php on line 498
+[28-Sep-2015 17:35:57 UTC] PHP Notice:  getimagesize(): Read error! in /home1/desktopi/public_html/markfedonline/timthumb.php on line 498
+[29-Sep-2015 00:04:52 UTC] PHP Notice:  getimagesize(): Read error! in /home1/desktopi/public_html/markfedonline/timthumb.php on line 498
+[29-Sep-2015 00:04:52 UTC] PHP Notice:  getimagesize(): Read error! in /home1/desktopi/public_html/markfedonline/timthumb.php on line 498
+[29-Sep-2015 00:06:21 UTC] PHP Notice:  getimagesize(): Read error! in /home1/desktopi/public_html/markfedonline/timthumb.php on line 498
+[02-Nov-2015 06:12:31 UTC] PHP Warning:  imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+ in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:12:31 UTC] PHP Warning:  imagecreatefromjpeg(): '/home/markf7ux/public_html/assets/uploads/files/9b629-mancozeb.jpg' is not a valid JPEG file in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:12:32 UTC] PHP Warning:  imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+ in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:12:32 UTC] PHP Warning:  imagecreatefromjpeg(): '/home/markf7ux/public_html/assets/uploads/files/1e199-markkgrip.jpg' is not a valid JPEG file in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:18:04 UTC] PHP Warning:  imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+ in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:18:04 UTC] PHP Warning:  imagecreatefromjpeg(): '/home/markf7ux/public_html/assets/uploads/files/34f82-markcladino.jpg' is not a valid JPEG file in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:29:36 UTC] PHP Warning:  imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+ in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:29:36 UTC] PHP Warning:  imagecreatefromjpeg(): '/home/markf7ux/public_html/assets/uploads/files/1e199-markkgrip.jpg' is not a valid JPEG file in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:29:36 UTC] PHP Warning:  imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+ in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:29:36 UTC] PHP Warning:  imagecreatefromjpeg(): '/home/markf7ux/public_html/assets/uploads/files/a2c61-markglypho-1-ltr.jpg' is not a valid JPEG file in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:29:44 UTC] PHP Warning:  imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+ in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:29:44 UTC] PHP Warning:  imagecreatefromjpeg(): '/home/markf7ux/public_html/assets/uploads/files/7fea5-markfipro-5-ltr.jpg' is not a valid JPEG file in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:29:47 UTC] PHP Warning:  imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+ in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:29:48 UTC] PHP Warning:  imagecreatefromjpeg(): '/home/markf7ux/public_html/assets/uploads/files/ae18b-markpertila-5-ltr.jpg' is not a valid JPEG file in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:38:29 UTC] PHP Warning:  imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+ in /home/markf7ux/public_html/timthumb.php on line 1101
+[02-Nov-2015 06:38:29 UTC] PHP Warning:  imagecreatefromjpeg(): '/home/markf7ux/public_html/assets/uploads/files/7fea5-markfipro-5-ltr.jpg' is not a valid JPEG file in /home/markf7ux/public_html/timthumb.php on line 1101
+[03-Nov-2015 12:10:41 Etc/GMT] PHP Fatal error:  Call to undefined function phpdie() in /home/markf7ux/public_html/index.php on line 1
+[03-Nov-2015 12:10:43 Etc/GMT] PHP Fatal error:  Call to undefined function phpdie() in /home/markf7ux/public_html/index.php on line 1
+[03-Nov-2015 12:10:44 Etc/GMT] PHP Fatal error:  Call to undefined function phpdie() in /home/markf7ux/public_html/index.php on line 1
+[03-Nov-2015 12:12:03 Etc/GMT] PHP Fatal error:  Call to undefined function phpdie() in /home/markf7ux/public_html/index.php on line 1
+[03-Nov-2015 12:12:05 Etc/GMT] PHP Fatal error:  Call to undefined function phpdie() in /home/markf7ux/public_html/index.php on line 1
+[03-Nov-2015 12:12:06 Etc/GMT] PHP Fatal error:  Call to undefined function phpdie() in /home/markf7ux/public_html/index.php on line 1
+[03-Nov-2015 12:16:27 Etc/GMT] PHP Fatal error:  Call to undefined function phpdie() in /home/markf7ux/public_html/index.php on line 1
+[03-Nov-2015 12:16:34 Etc/GMT] PHP Fatal error:  Call to undefined function phpdie() in /home/markf7ux/public_html/index.php on line 1
+[03-Nov-2015 12:16:45 Etc/GMT] PHP Fatal error:  Call to undefined function phpdie() in /home/markf7ux/public_html/index.php on line 1
+[10-Nov-2015 10:31:00 Asia/Calcutta] PHP Parse error:  syntax error, unexpected end of file, expecting ')' in /home/markf7ux/public_html/application/controllers/Admin.php on line 453
+[10-Nov-2015 10:31:02 Asia/Calcutta] PHP Parse error:  syntax error, unexpected end of file, expecting ')' in /home/markf7ux/public_html/application/controllers/Admin.php on line 453

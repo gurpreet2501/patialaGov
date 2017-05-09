@@ -1,3 +1,0 @@
-<?php
-$app = require __DIR__ . '/vendor/robmorgan/phinx/app/phinx.php';
-$app->run();

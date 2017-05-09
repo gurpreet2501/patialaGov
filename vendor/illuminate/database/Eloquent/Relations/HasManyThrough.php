@@ -138,7 +138,7 @@ class HasManyThrough extends Relation
     {
         $table = $this->parent->getTable();
 
-        $this->query->whereIn($table.'.'.$this->firstKey, $this->getKeys($models, $this->localKey));
+        $this->query->whereIn($table.'.'.$this->firstKey, $this->getKeys($models));
     }
 
     /**
@@ -373,14 +373,13 @@ class HasManyThrough extends Relation
      * @param  int  $perPage
      * @param  array  $columns
      * @param  string  $pageName
-     * @param  int|null  $page
      * @return \Illuminate\Contracts\Pagination\Paginator
      */
-    public function simplePaginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null)
+    public function simplePaginate($perPage = null, $columns = ['*'], $pageName = 'page')
     {
         $this->query->addSelect($this->getSelectColumns($columns));
 
-        return $this->query->simplePaginate($perPage, $columns, $pageName, $page);
+        return $this->query->simplePaginate($perPage, $columns, $pageName);
     }
 
     /**
