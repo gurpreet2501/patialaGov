@@ -17,14 +17,14 @@
 	            <h4 class="panel-title"> <a href="#collapseListGroup1" class="" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="collapseListGroup1">Public Utility Services </a> </h4> </div>
 	         <div class="panel-collapse collapse in" role="tabpanel" id="collapseListGroup1" aria-labelledby="collapseListGroupHeading1" aria-expanded="true">
 	            <ul class="list-group">
-										<a class="page-anchors" href="<?=site_url('page/')?>"><li class="list-group-item">About Suwidha</li></a>
-										<a class="page-anchors" href="<?=site_url('page/')?>"><li class="list-group-item">Public Utility Forms</li></a>
-										<a class="page-anchors" href="<?=site_url('page/')?>"><li class="list-group-item">Passport Status</li></a>
-										<a class="page-anchors" href="<?=site_url('page/')?>"><li class="list-group-item">BPL Data</li></a>
-										<a class="page-anchors" href="<?=site_url('page/')?>"><li class="list-group-item">Social Security Pensioner's Status</li></a>
-										<a class="page-anchors" href="<?=site_url('page/')?>"><li class="list-group-item">ICDS Schemes Data</li></a>
-										<a class="page-anchors" href="<?=site_url('page/')?>"><li class="list-group-item">Service Area Plan (Bank)</li></a>
-										<a class="page-anchors" href="<?=site_url('page/')?>"><li class="list-group-item">E-Governance at Patiala</li></a>
+										<li class="list-group-item">About Suwidha</li>
+										<li class="list-group-item">Public Utility Forms</li>
+										<li class="list-group-item">Passport Status</li>
+										<li class="list-group-item">BPL Data</li>
+										<li class="list-group-item">Social Security Pensioner's Status</li>
+										<li class="list-group-item">ICDS Schemes Data</li>
+										<li class="list-group-item">Service Area Plan (Bank)</li>
+										<li class="list-group-item">E-Governance at Patiala</li>
 	            </ul>
 	            
 	        </div>
