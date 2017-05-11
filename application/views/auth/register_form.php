@@ -95,55 +95,12 @@ $captcha = array(
             <input type="text" name="phone_number" class="required form-control" id="phone" value="<?=isset($_POST['phone_number'])? $_POST['phone_number'] : ''?>" placeholder="Enter Your Contact No">
           </div>
           <div class="form-group">
-            <label for="add">Address Line 1</label>
-            <input type="text" name="address_line_1" class="required form-control" id="bili_add" value="<?=isset($_POST['address_line_1'])? $_POST['address_line_1'] : ''?>" placeholder="Enter Your Billing Address">
+            <input type="hidden" name="role" value="user">
           </div>
-          <div class="form-group">
-            <label for="address">Address Line 2</label>
-            <input type="text" name="address_line_2" class="required form-control" id="ship_add" value="<?=isset($_POST['address_line_2'])? $_POST['address_line_2'] : ''?>" placeholder="Enter Your Shipping Address">
-          </div>
-          <?php $this->load->helper('get_data'); ?>
-          <div class="form-group">
-            <label for="District">Country</label>
-            <select name="country" class="form-control"> 
-               <?php foreach(get_countries() as $val): ?>
-            	 <option value="<?=$val['id']?>"><?=$val['country']?></option>
-            	 <?php endforeach;  ?> 
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="District">State</label>
-            <select name="state" class="form-control"> 
-               <?php foreach(get_states() as $val): ?>
-            	 <option value="<?=$val['id']?>"><?=$val['state_name']?></option>
-            	 <?php endforeach;  ?> 
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="address">City</label>
-            <input type="text" name="city" class="required form-control" id="ship_add" value="<?=isset($_POST['city'])? $_POST['city'] : ''?>" placeholder="Enter Your Shipping Address">
-          </div>
-          <div class="form-group">
-            <label for="District">District</label>
-            <select name="district" class="form-control"> 
-               <?php foreach(get_districts() as $val): ?>
-               <option value="<?=$val['id']?>"><?=$val['district_name']?></option>
-               <?php endforeach;  ?> 
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="District">Select Type</label>
-            <select name="customer_type" class="form-control"> 
-            	 <option value="Domestic">Domestic</option>
-               <option value="Export">Export</option>
-            </select>
-          </div>
-
-          
+                
           <!-- <select type="hidden" name="customer_type" value='Domestic' /> -->
 
-				<input type="submit" name="register" value="Register" class=" register-btn  form-control btn bootstrap_button btn btn-orange square-btn-adjust" />
+				<input type="submit" name="register" value="Register" class=" register-btn btn btn-danger" />
        <?php echo form_close(); ?>
      </div>  
      <div class="col-md-1"></div>

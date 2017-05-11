@@ -78,6 +78,8 @@ class Auth extends CI_Controller
              redirect('/admin');    // Redirecting to admin panel 
           else if($usr_type[0]['role']=='employee')
              redirect('/employee');  
+          else if($usr_type[0]['role']=='user')
+             redirect('/search');  
           else if(isset($_GET['cur_url'])){  //Redirecting to custom url 
              redirect($_GET['cur_url']);
           }

@@ -47,14 +47,14 @@
                 <div class='input-group date'>
                    <select class="form-control required" name="time_slot" id="timeSlot">
                    <?php foreach($tslots as $slot): ?>			
-                   		<option value="<?=$slot->id?>"><?=$slot->name?></option>
+                   		<option value="<?=$slot['id']?>" <?=$slot['disabled'] ? 'disabled' : ''?>><?=$slot['name']?></option>
                    <?php endforeach; ?>		
                    </select>
                 </div>
               </div>
               <div class="form-group">
               	<label for="MeetingPurpose">Subject</label>
-              	<input name="subject"  data-msg="Please enter subject field" class="form-control required" />
+              	<input type="text" name="subject"  data-msg="Please enter subject field" class="form-control required" />
               </div>
               <div class="form-group">
               	<label for="MeetingPurpose">Meeting Purpose</label>

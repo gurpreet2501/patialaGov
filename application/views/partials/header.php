@@ -22,7 +22,13 @@
 			</div>
 		
 			<div class="col-xs-4">
+			<?php if($this->tank_auth->get_user_id()): ?>
+				<div class="login_link"><a href="<?=site_url('user/bookings')?>">Check Your Bookings</a></div>
+				<div class="login_link"><a href="<?=site_url('auth/logout')?>">Logout</a></div>
+		<?php else: ?>		
 				<div class="login_link"><a href="<?=site_url('admin')?>">Login</a></div>
+		<?php endif; ?>		
+				
 				<div id="google_translate_element"></div><script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'hi,pa,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');

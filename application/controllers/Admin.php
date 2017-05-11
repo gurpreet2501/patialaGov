@@ -10,7 +10,7 @@ class Admin extends CI_Controller {
 		parent::__construct();
     $this->load->library('grocery_CRUD');
     auth_force();
-    if(is_role('employee'))
+    if(!is_role('admin'))
       redirect('auth/logout');
 	}
 
@@ -1515,7 +1515,8 @@ public function depots(){
       $crud->set_theme('datatables');
       $crud->set_table('users');
       $crud->set_subject('Employees');
-      $crud->columns('username','email','department','block','room_no');
+      $crud->set_field_upload('profile_pic','assets/uploads/files');
+      $crud->columns('username','email','profile_pic','department','block','room_no');
       $crud->field_type('password', 'password');
       $crud->field_type('role', 'hidden','employee');
       $crud->required_fields('username','password','email','full_name');
@@ -1624,7 +1625,8 @@ public function depots(){
       $crud->fields('booking_status');
     $crud->unset_add();
     $crud->unset_delete();
-    $crud->columns('name','email','date','time_slot','booking_status');
+   
+    $crud->columns('name','email','date','time_slot','booking_status','profile_pic');
     $output = $crud->render();
     $this->load->view('admin/crud.php',$output);
   }
@@ -1635,6 +1637,23 @@ public function depots(){
     $crud->set_table('booking');
     $crud->unset_export();
     $crud->unset_print();
+    $crud->set_subject('Bookings');
+    $crud->set_relation('time_slot','time_slots','name');
+    if($crud->getState() == 'edit')
+      $crud->fields('booking_status');
+    $crud->unset_add();
+    $crud->columns('name','email','date','time_slot','booking_status');
+    $output = $crud->render();
+    $this->load->view('admin/crud.php',$output);
+  }
+
+  function acceptedBookings(){
+    $crud = new grocery_CRUD();
+    $crud->set_theme('datatables');
+    $crud->set_table('booking');
+    $crud->unset_export();
+    $crud->unset_print();
+    $crud->where('booking_status','Accepted');
     $crud->set_subject('Bookings');
     $crud->set_relation('time_slot','time_slots','name');
     if($crud->getState() == 'edit')

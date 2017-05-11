@@ -43,9 +43,9 @@
 					  	<th>Name</th>
 					  	<th>Department</th>
 					  	<th>Phone</th>
-					  	<th>Select</th>
 					  	<th>Block</th>
 					  	<th>Room</th>
+					  	<th></th>
 					  </tr>
 						<?php foreach($results as $emp):?>	  
 					  <tr>

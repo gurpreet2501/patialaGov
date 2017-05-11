@@ -1,3 +1,4 @@
+<div class="spacer-100"></div>
 <div class="row">
 	<div class="col-xs-12">
 		<div class="col-xs-2"><a href="#"><img src="<?=base_url()?>/images/cashless.jpg" class="zoom-in" /></div></a>
@@ -43,6 +44,3 @@ $('.carousel').carousel({
  jQuery('#booking_form').validate();
 </script>
 
-</body>
-</html
-				

@@ -481,3 +481,11 @@ label.error {
     color: #fff;
     width: 100%;
 }
+.spacer-100{
+  margin-top:100px;
+}
+.form-errors p {
+    background: red;
+    color: #fff;
+    padding: 4px;
+}
