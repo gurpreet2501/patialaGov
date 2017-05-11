@@ -1,5 +1,6 @@
 <?php  defined('BASEPATH') OR exit('No direct script access allowed');
 use App\Models;
+use Illuminate\Database\Capsule\Manager as DB;
 class Booking extends CI_Controller{
   
   public function __construct(){
@@ -18,11 +19,13 @@ class Booking extends CI_Controller{
       $data['email'] = $user->email;
       $data['age'] = $user->age;
       $data['sex'] = $user->sex;
-      $data['phone_number'] = $user->phone_number;
+      $data['phone_no'] = $user->phone_number;
       $data['user_id'] = user_id();
       $originalDate = $data['date'];
       $data['date'] = date("Y-m-d", strtotime($originalDate));
-         
+      
+      $this->checkIfSameBookingLessThanTenDays($data);   
+
       if($this->bookingExists($data)){
         lako::get('flash')->set('global',array(
           'type'  => 'danger',
@@ -90,5 +93,30 @@ class Booking extends CI_Controller{
      $this->load->view('checkBookings',['bookings' => $bookings]);
   }
 
+  function checkIfSameBookingLessThanTenDays($data){
+    $new_timestamp = strtotime('-9 days', strtotime($data['date']));
+    $previousDate =  date("Y-m-d",$new_timestamp);
+
+    $query = "
+      select * from booking 
+      where user_id={$data['user_id']} 
+      AND 
+      employee_id={$data['employee_id']}
+      AND 
+      date >= '{$previousDate}' AND date <= '{$data['date']}' 
+      ";
+ 
+    $results = DB::select($query);
+    
+    if(count($results)){
+      lako::get('flash')->set('global',array(
+          'type'  => 'danger',
+          'msg'   => 'You can book the same employee after 10 days with respect to your previous booking.'
+        ));         
+
+      redirect('/employeeSearch');      
+    }
+
   
+  }
 }

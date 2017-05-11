@@ -85,9 +85,9 @@ class Auth extends CI_Controller
           }
           else{
             if($this->session->userdata('order_data'))
-               redirect('cart/complete');
+               redirect('/patialaGov');
           }
-          redirect('/');
+          redirect('/patialaGov');
         } else {
 					$errors = $this->tank_auth->get_error_message();
 					if (isset($errors['banned'])) {								// banned user

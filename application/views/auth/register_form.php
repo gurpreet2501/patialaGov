@@ -35,7 +35,11 @@ $captcha = array(
 	'maxlength'	=> 8,
 );
 ?>
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3"><?php $this->load->view('partials/leftSidebar')?></div>
+    <div class="col-xs-6">
+      
 <div class="auth__forms_container">
   <div class="auth_forms">
    <div class="row">
@@ -111,11 +115,16 @@ $captcha = array(
                 
           <!-- <select type="hidden" name="customer_type" value='Domestic' /> -->
 
-				<input type="submit" name="register" value="Register" class=" register-btn btn btn-danger" />
+        <input type="submit" name="register" value="Register" class=" register-btn btn btn-danger" />
        <?php echo form_close(); ?>
      </div>  
      <div class="col-md-1"></div>
   </div>
  </div> 
 </div>
+    </div>
+    <div class="col-xs-3"><?php $this->load->view('partials/rightSidebar')?></div>
+  </div>
+</div>
+
 <?php $this->load->view('partials/auth_footer');?>

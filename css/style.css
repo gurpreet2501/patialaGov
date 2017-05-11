@@ -505,3 +505,10 @@ blockquote p.heading {
     border-top: 1px solid #ccc;
     padding-top: 23px;
 }
+.label-success.green {
+    padding: 4px;
+}
+div#google_translate_element {
+    text-align: right;
+    margin-top: 13px;
+}

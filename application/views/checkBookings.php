@@ -2,7 +2,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
-				<h3>Search Employees</h3>
+				<h3>Bookings Details</h3>
 				<?php 
 			
 				 if(count($bookings)): ?>
@@ -20,7 +20,7 @@
 						<?php foreach($bookings as $book):
 							$statusClass = 'label label-default';
 							if($book['booking_status'] == 'Accepted')
-								$statusClass = 'label label-success';
+								$statusClass = 'label label-success green';
 							else if($book['booking_status'] == 'Canceled')
 								$statusClass = 'label label-danger';
 						?>	  

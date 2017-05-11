@@ -29,15 +29,12 @@
 		<?php else: ?>		
 				<div class="login_link"><a class="btn-danger" href="<?=site_url('admin')?>">Login</a></div>
 		<?php endif; ?>		
+				<img src="<?=base_url('images/banner5.jpg')?>"  class="header-img" /> 
+				<div id="google_translate_element"></div>
 				
-				<div id="google_translate_element"></div><script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'hi,pa,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
-}
-</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 				<div class="header-right-img">
-					<img src="<?=base_url('images/pblogo.bmp')?>"  class="header-img-2" /> 
-					<img src="<?=base_url('images/banner5.jpg')?>"  class="header-img" /> 
+					<!-- <img src="<?=base_url('images/pblogo.bmp')?>"  class="header-img-2" />  -->
+					
 				</div>
 			</div>
 		</div>
