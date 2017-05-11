@@ -25,7 +25,11 @@ class EmployeeSearch extends CI_Controller{
         if(!empty($data['department']))
           $query->where('department','=', $data['department']);
 
-        $results = $query->get();		
+        if(!empty($data['name']))
+          $query->where('full_name','like', "%{$data['name']}%");
+
+        $results = $query->orderBy('full_name')->get();		
+       
       } //if bracket closed
 
     $this->load->view('employee-search', ['results' => $results]);    

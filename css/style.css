@@ -474,3 +474,10 @@ span.glyphicon.glyphicon-search {
     background-color: #5cb85c;
     padding: 9px;
 }
+
+label.error {
+    background: red;
+    padding: 5px;
+    color: #fff;
+    width: 100%;
+}

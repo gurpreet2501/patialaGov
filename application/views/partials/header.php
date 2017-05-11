@@ -9,7 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="<?=base_url('css/bootstrap.min.css')?>">
 	<link rel="stylesheet" type="text/css" href="<?=base_url('css/style.css')?>">
 	<title>Official Website Of District Patiala - Homepage</title>
-	</head>
+	       
+
 </head>
 <body>
  <div class="container">
@@ -22,6 +23,11 @@
 		
 			<div class="col-xs-4">
 				<div class="login_link"><a href="<?=site_url('admin')?>">Login</a></div>
+				<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'hi,pa,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 				<div class="header-right-img">
 					<img src="<?=base_url('images/pblogo.bmp')?>"  class="header-img-2" /> 
 					<img src="<?=base_url('images/banner5.jpg')?>"  class="header-img" /> 
@@ -67,7 +73,7 @@
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">District Administration <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
 										<li><a href="#">D.C. Profile</a></li>
-										<li><a href="#">Role of Deputy Commissioner</a></li>
+										<li><a href="<?=site_url()?>/page/role-of-deputy-commissioner">Role of Deputy Commissioner</a></li>
 										<li><a href="#">Role of ADC</a></li>
 										<li><a href="#">Court Work of Branch Officers</a></li>
 			          </ul>

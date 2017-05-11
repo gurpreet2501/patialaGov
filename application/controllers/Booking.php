@@ -21,7 +21,8 @@ class Booking extends CI_Controller{
         redirect('booking/index/'.$data['employee_id']);
       }
 
-      Models\Booking::create($data);
+      // Models\Booking::create($data);
+      sendEmail($data);
       lako::get('flash')->set('global',array(
         'type'  => 'success',
         'msg'   => 'Booking Saved Successfully.'

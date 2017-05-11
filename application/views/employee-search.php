@@ -1,12 +1,13 @@
 <?php $this->load->view('partials/header');?>
 <div class="container">
 	<div class="row">
-		<div class="col-xs-3">
-		<?php $this->load->view('partials/leftSidebar'); ?>
-		</div>
-		<div class="col-xs-6">
+		<div class="col-xs-12">
 				<h3>Search Employees</h3>
 				<form class="form-inline" method="post">
+				  <div class="form-group">
+				    <!-- <label for="exampleInputEmail2">Email</label> -->
+				    <input type="text" class="form-control" name="name" placeholder="Enter name"/>
+				  </div>
 				  <div class="form-group">
 				    <!-- <label for="exampleInputEmail2">Email</label> -->
 				    <select name="block" class="form-control">
@@ -61,10 +62,6 @@
 							<h3 class="text-center">No Records Found.</h3>
 				<?php endif;?>
 
-		</div>
-
-		<div class="col-xs-3">
-			<?php $this->load->view('partials/rightSidebar'); ?>
 		</div>
 	</div>
 </div>

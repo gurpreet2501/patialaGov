@@ -2,51 +2,50 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-3">
-		<?php $this->load->view('partials/leftSidebar'); ?>
+			<?php $this->load->view('partials/leftSidebar'); ?>
 		</div>
 		<div class="col-xs-6">
 				<h2>Book Your Appointment</h2>
-						<form method="post">
+						<form method="post" id="booking_form">
 						  <div class="form-group">
 						    <label for="exampleInputEmail1">Name</label>
-						    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+						    <input type="text" class="form-control required" data-msg="Please fill name field"  id="name" name="name" placeholder="Enter your name">
 						  </div>
 						  <div class="form-group">
-						    <label for="exampleInputPassword1">Email (optional)</label>
-						    <input type="email" class="form-control" name="email" id="exampleInputPassword1" placeholder="Enter Email Address">
+						    <label for="email">Email (optional)</label>
+						    <input type="email" class="form-control required" data-msg="Please fill email field."  name="email" id="email" placeholder="Enter Email Address">
 						  </div>
 						  <div class="form-group">
-						    <label for="exampleInputPassword1">Phone</label>
-						    <input type="text" class="form-control" name="phone_no" id="exampleInputPassword1" placeholder="Enter Phone No">
+						    <label for="phone">Phone</label>
+						    <input type="text" class="form-control required" data-msg="Please fill phone field"  name="phone_no" id="phone" placeholder="Enter Phone No">
 						  </div>
 						  <div class="form-group">
-						    <label for="exampleInputPassword1">Age</label>
-						    <input type="text" class="form-control" name="age" id="exampleInputPassword1" placeholder="Enter Your age">
+						    <label for="age">Age</label>
+						    <input type="text" class="form-control required" name="age" data-msg="Please fill age field"  id="age" placeholder="Enter Your age">
 						  </div>
 						  <div class="form-group">
-						    <label for="exampleInputPassword1">Sex</label>
-						    <select name="sex" class="form-control">
+						    <label for="gender">Sex</label>
+						    <select name="sex" class="form-control required" id="gender" data-msg="Please select your gender.">
 						    	<option value="Male">Male</option>
 						    	<option value="Female">Female</option>
 						    </select>	
 						  </div>
 						  <div class="form-group">
-						    <input type="hidden" class="form-control" name="employee_id" value="<?=$empid?>" id="exampleInputPassword1">
+						    <input type="hidden" class="form-control" name="employee_id" value="<?=$empid?>" >
 						  </div>
 						  <div class="form-group">
-						  <label for="exampleInputPassword1">Choose Date</label>
+						  <label for="datetimepicker1">Choose Date</label>
                 <div class='input-group date'>
-                    <input type='text' class="form-control" name="date"  id='datetimepicker1' placeholder="Click here to select date and time" />
+                    <input type='text' class="form-control required" data-msg="Please enter date" name="date"  id='datetimepicker1' placeholder="Click here to select date and time" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
               </div>
               <div class="form-group">
-						     <label for="exampleInputPassword1">Choose Time Slot</label>
+						     <label for="timeSlot">Choose Time Slot</label>
                 <div class='input-group date'>
-                   <select class="form-control" name="time_slot">
-                   <option >--Select--</option>
+                   <select class="form-control required" name="time_slot" id="timeSlot">
                    <?php foreach($tslots as $slot): ?>			
                    		<option value="<?=$slot->id?>"><?=$slot->name?></option>
                    <?php endforeach; ?>		
@@ -54,8 +53,12 @@
                 </div>
               </div>
               <div class="form-group">
-              	<label for="exampleInputPassword1">Meeting Purpose</label>
-              	<textarea name="meeting_purpose" class="form-control" rows="4"></textarea>
+              	<label for="MeetingPurpose">Subject</label>
+              	<input name="subject"  data-msg="Please enter subject field" class="form-control required" />
+              </div>
+              <div class="form-group">
+              	<label for="MeetingPurpose">Meeting Purpose</label>
+              	<textarea name="meeting_purpose" class="form-control required" rows="4" id="MeetingPurpose"></textarea>
               </div>
 						  <button type="submit" class="btn btn-danger">Submit</button>
 						</form>	
