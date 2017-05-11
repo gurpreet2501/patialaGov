@@ -73,7 +73,7 @@ $register_action = site_url('auth/register');?>
                   <div class="checkbox">
                     <label for="<?=$remember['id'];?>">
                       <input type="checkbox" name="remember" id="remember" value=1 checked="<?=set_value('remember');?>"> Remember Me
-                      <span class="forgot_pass"><?php echo anchor('/auth/forgot_password/', 'Forgot password', array('class' => 'underline')); ?></span>
+                      <!-- <span class="forgot_pass"><?php// echo anchor('/auth/forgot_password/', 'Forgot password', array('class' => 'underline')); ?></span> -->
                       
                       or
                       <?php echo anchor('/auth/register/', 'Register', array('class' => 'underline')); ?>

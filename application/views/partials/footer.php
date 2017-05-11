@@ -42,5 +42,9 @@ $('.carousel').carousel({
   }
 });
  jQuery('#booking_form').validate();
+ if(!jQuery('table').hasClass('table-bordered'))
+ 		jQuery('table').addClass('table table-bordered')
+
+
 </script>
 

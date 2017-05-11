@@ -7,29 +7,29 @@
 		<div class="col-xs-6">
 				<h2>Book Your Appointment</h2>
 						<form method="post" id="booking_form">
-						  <div class="form-group">
+						 <!--  <div class="form-group">
 						    <label for="exampleInputEmail1">Name</label>
 						    <input type="text" class="form-control required" data-msg="Please fill name field"  id="name" name="name" placeholder="Enter your name">
-						  </div>
-						  <div class="form-group">
+						  </div> -->
+						  <!-- <div class="form-group">
 						    <label for="email">Email (optional)</label>
 						    <input type="email" class="form-control required" data-msg="Please fill email field."  name="email" id="email" placeholder="Enter Email Address">
-						  </div>
-						  <div class="form-group">
+						  </div> -->
+						  <!-- <div class="form-group">
 						    <label for="phone">Phone</label>
 						    <input type="text" class="form-control required" data-msg="Please fill phone field"  name="phone_no" id="phone" placeholder="Enter Phone No">
-						  </div>
-						  <div class="form-group">
+						  </div> -->
+						  <!-- <div class="form-group">
 						    <label for="age">Age</label>
 						    <input type="text" class="form-control required" name="age" data-msg="Please fill age field"  id="age" placeholder="Enter Your age">
-						  </div>
-						  <div class="form-group">
+						  </div> -->
+					<!-- 	  <div class="form-group">
 						    <label for="gender">Sex</label>
 						    <select name="sex" class="form-control required" id="gender" data-msg="Please select your gender.">
 						    	<option value="Male">Male</option>
 						    	<option value="Female">Female</option>
 						    </select>	
-						  </div>
+						  </div> -->
 						  <div class="form-group">
 						    <input type="hidden" class="form-control" name="employee_id" value="<?=$empid?>" >
 						  </div>

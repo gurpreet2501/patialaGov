@@ -95,6 +95,17 @@ $captcha = array(
             <input type="text" name="phone_number" class="required form-control" id="phone" value="<?=isset($_POST['phone_number'])? $_POST['phone_number'] : ''?>" placeholder="Enter Your Contact No">
           </div>
           <div class="form-group">
+            <label for="phone">Sex</label>
+            <select name="sex" class="required form-control" id="sex" value="<?=isset($_POST['sex'])? $_POST['sex'] : ''?>" >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" name="age" class="required form-control" id="age" value="<?=isset($_POST['age'])? $_POST['age'] : ''?>" placeholder="Enter Your Age">
+          </div>
+          <div class="form-group">
             <input type="hidden" name="role" value="user">
           </div>
                 

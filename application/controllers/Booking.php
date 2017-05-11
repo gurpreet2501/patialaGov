@@ -13,10 +13,16 @@ class Booking extends CI_Controller{
 
     if(!empty($_POST)){
       $data = $_POST;
-      $data['user_id'] = $this->tank_auth->get_user_id();
+      $user = Models\Users::where('id',user_id())->first();
+      $data['name'] = $user->full_name;
+      $data['email'] = $user->email;
+      $data['age'] = $user->age;
+      $data['sex'] = $user->sex;
+      $data['phone_number'] = $user->phone_number;
+      $data['user_id'] = user_id();
       $originalDate = $data['date'];
       $data['date'] = date("Y-m-d", strtotime($originalDate));
-      
+         
       if($this->bookingExists($data)){
         lako::get('flash')->set('global',array(
           'type'  => 'danger',
@@ -59,14 +65,29 @@ class Booking extends CI_Controller{
   function bookingExists($data){
   
     $booking = Models\Booking::where('employee_id',$data['employee_id'])
-                    ->where('date',$data['date'])
-                    ->where('time_slot',$data['time_slot'])->first();
+                    ->where('date', $data['date'])
+                    ->where('time_slot', $data['time_slot'])->first();
                    
-                  
     if($booking)                
       return true;
 
     return false;
+  }
+
+  function checkBookings(){
+     $bookings = [];
+     $bookings = Models\Booking::where('user_id', user_id())->get(); 
+     if(!empty($bookings)){
+      $bookings = $bookings->toArray();
+      foreach ($bookings as $key => $book) {
+        $bookings[$key]['employee_details'] = Models\Users::where('id', $book['employee_id'])->first()->toArray();
+        $tslot = Models\TimeSlots::select('name')->where('id', $book['time_slot'])->first()->toArray();
+        $bookings[$key]['time_slot'] = $tslot['name'];
+
+      }
+     }
+
+     $this->load->view('checkBookings',['bookings' => $bookings]);
   }
 
   

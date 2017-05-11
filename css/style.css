@@ -17,12 +17,12 @@ body {
 
 a {
   background-color: transparent;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 a:active,
 a:hover {
-  text-decoration: none;
+  text-decoration: none !important;
   outline: 0;
 }
 
@@ -482,10 +482,26 @@ label.error {
     width: 100%;
 }
 .spacer-100{
-  margin-top:100px;
+  margin-top: 100px;
 }
 .form-errors p {
     background: red;
     color: #fff;
     padding: 4px;
+}
+
+.login_link a {
+  
+    padding: 6px;
+    border-radius: 8px;
+}
+
+
+blockquote p.heading {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: red;
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding-top: 23px;
 }

@@ -50,7 +50,12 @@ class User extends CI_Controller {
     if($crud->getState() == 'edit')
       $crud->fields('booking_status');
     $crud->unset_add();
+    $crud->unset_edit();
+    $crud->unset_view();
+    $crud->unset_export();
+    $crud->unset_print();
     $crud->unset_delete();
+
     $crud->columns('name','email','date','time_slot','booking_status');
     $output = $crud->render();
     $this->load->view('admin/crud.php',$output);
@@ -60,7 +65,7 @@ class User extends CI_Controller {
   public function update_password(){
     $crud = new grocery_CRUD();
     if(($crud->getState() == 'read') || ($crud->getState() == 'list'))
-      redirect("employee/update_password/edit/".user_id());
+      redirect("user/update_password/edit/".user_id());
 
     $crud->set_theme('datatables');
     $crud->set_table('users');

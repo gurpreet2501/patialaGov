@@ -23,10 +23,11 @@
 		
 			<div class="col-xs-4">
 			<?php if($this->tank_auth->get_user_id()): ?>
-				<div class="login_link"><a href="<?=site_url('user/bookings')?>">Check Your Bookings</a></div>
-				<div class="login_link"><a href="<?=site_url('auth/logout')?>">Logout</a></div>
+				<div class="login_link"><a class="btn-danger" href="<?=site_url('booking/checkBookings')?>">Check Your Bookings</a></div>
+				<br/>
+				<div class="login_link"><a class="btn-danger" href="<?=site_url('auth/logout')?>">Logout</a></div>
 		<?php else: ?>		
-				<div class="login_link"><a href="<?=site_url('admin')?>">Login</a></div>
+				<div class="login_link"><a class="btn-danger" href="<?=site_url('admin')?>">Login</a></div>
 		<?php endif; ?>		
 				
 				<div id="google_translate_element"></div><script type="text/javascript">
