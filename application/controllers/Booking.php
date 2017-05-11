@@ -29,7 +29,7 @@ class Booking extends CI_Controller{
       if($this->bookingExists($data)){
         lako::get('flash')->set('global',array(
           'type'  => 'danger',
-          'msg'   => 'This employee is already booked for this time peroid.'
+          'msg'   => 'This employee is already booked for this time period.'
         ));
       
         redirect('booking/index/'.$data['employee_id']);
@@ -46,7 +46,7 @@ class Booking extends CI_Controller{
     }
 
     $timeSlots = Models\TimeSlots::orderBy('id','ASC')->get();
-    $bookings = Models\Booking::select('time_slot')->where('employee_id', $empid)->where('date',date('Y-m-d'))->get();
+    $bookings = Models\Booking::select('time_slot')->where('employee_id', $empid)->where('date', date('Y-m-d'))->get();
     $bookedSlots = array_column($bookings->toArray(), 'time_slot');
    
     $timeSlots = $timeSlots->toArray();
