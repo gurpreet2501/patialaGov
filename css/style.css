@@ -512,3 +512,6 @@ div#google_translate_element {
     text-align: right;
     margin-top: 13px;
 }
+.booking-count {
+  color:red;
+}

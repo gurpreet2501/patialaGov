@@ -16,9 +16,30 @@ class Admin extends CI_Controller {
 
  	public function index($lang=false){
     redirect('admin/bookings');
+  }
+
+  public function bookingsCount($lang=false){
+    $emp = [];
+    $emp = M\Users::select('id','full_name','email','phone_number','designation','block','room_no','department')->where('role','employee')->get();
+    if(!empty($emp)){
+      $emp = $emp->toArray();
+      
+      foreach ($emp as $key => $val) {
+       
+        $bookings = M\Booking::where('employee_id', $val['id'])->where('date', date('Y-m-d'))->where('booking_status','Accepted')->count();
+        $totalbookings = M\Booking::where('employee_id', $val['id'])->where('date', date('Y-m-d'))->count();
+        $canceled = M\Booking::where('employee_id', $val['id'])->where('date', date('Y-m-d'))->where('booking_status','Canceled')->count();
+        $pending = M\Booking::where('employee_id', $val['id'])->where('date', date('Y-m-d'))->where('booking_status','Pending')->count();
+
+        $emp[$key]['accepted'] = $bookings;
+        $emp[$key]['totalBookings'] = $totalbookings;
+        $emp[$key]['canceled'] = $canceled;
+        $emp[$key]['pending'] = $pending;
+      }
+    }
+    
+    $this->load->view('admin/bookingsCount',['bookings' => $emp]);
 	}
-
-
 
   public function timeSlots($lang=false){
 

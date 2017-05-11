@@ -23,6 +23,7 @@ $config['departments'] = array('Teaching','Agriculture','Fishing','Food and Civi
 
 $config['blocks'] = range('A','Z');
 
+$config['accepted_bookings'] = 15;
 /*
 |--------------------------------------------------------------------------
 | Index File
