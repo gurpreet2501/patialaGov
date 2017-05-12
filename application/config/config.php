@@ -25,7 +25,7 @@ $config['blocks'] = range('A','Z');
 
 $config['accepted_bookings'] = 15;
 
-$config['site_status'] = 'LIVE';
+$config['site_status'] = 'DEMO';
 /*
 |--------------------------------------------------------------------------
 | Index File
