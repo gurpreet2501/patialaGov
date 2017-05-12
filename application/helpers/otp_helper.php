@@ -1,8 +1,8 @@
 <?php 
 use App\Models;
 function getOtp(){
-	$string = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  return substr(str_shuffle($string), 1, 7);
+	$string = '0123456789';
+  return substr(str_shuffle($string), 1, 6);
 }
 
 
