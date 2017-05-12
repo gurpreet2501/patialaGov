@@ -21,9 +21,7 @@ $config['base_url'] = '';
 
 $config['departments'] = array('Teaching','Agriculture','Fishing','Food and Civil Supp.');
 
-$config['blocks'] = range('A','Z');
 
-$config['accepted_bookings'] = 15;
 
 $config['site_status'] = 'DEMO';
 /*
@@ -55,6 +53,7 @@ $config['index_page'] = 'index.php';
 */
 $config['uri_protocol']	= 'REQUEST_URI';
 
+$config['accepted_bookings'] = 15;
 /*
 |--------------------------------------------------------------------------
 | URL suffix
@@ -80,6 +79,7 @@ $config['url_suffix'] = '';
 */
 $config['language']	= 'english';
 
+$config['blocks'] = range('A','Z');
 /*
 |--------------------------------------------------------------------------
 | Default Character Set
