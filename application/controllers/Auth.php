@@ -12,7 +12,7 @@ class Auth extends CI_Controller
 	}
 
 	function index()
-	{
+	{	
 		if ($message = $this->session->flashdata('message')) {
 			 $this->load->view('auth/general_message', array('message' => $message));
 		} else {
@@ -176,8 +176,10 @@ class Auth extends CI_Controller
                if(isset($_GET['cur_url']))
                    redirect($_GET['cur_url']);
 								// success
-
 					$usr_fields = $_POST;
+					$otp = getOtp();     
+          $usr_fields['otp'] = $otp;
+					
           $unset = array('username','email' ,'register' ,'password' ,'confirm_password'); 
 
 					foreach($unset as $val){
@@ -188,7 +190,8 @@ class Auth extends CI_Controller
 				  
            lako::get('objects')->get('users')->update($usr_fields, array('id',$data['user_id'])); // Entering user Information in table. i.e. Name, phone ,address , etc
 			
-
+					 redirect('/otp/verify/'. $data['user_id']);
+					 
 					if ($email_activation) {									// send "activate" email
 						$data['activation_period'] = $this->config->item('email_activation_expire', 'tank_auth') / 3600;
 

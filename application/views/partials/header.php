@@ -27,7 +27,8 @@
 				<br/>
 				<div class="login_link"><a class="btn-danger" href="<?=site_url('auth/logout')?>">Logout</a></div>
 		<?php else: ?>		
-				<div class="login_link"><a class="btn-danger" href="<?=site_url('admin')?>">Login</a></div>
+				<div class="login_link"><a class="btn-danger" href="<?=site_url('auth/login')?>">Login</a><a class="btn-danger" href="<?=site_url('auth/register')?>">Register</a></div>
+		
 		<?php endif; ?>		
 				<img src="<?=base_url('images/banner5.jpg')?>"  class="header-img" /> 
 				<div id="google_translate_element"></div>

@@ -515,3 +515,8 @@ div#google_translate_element {
 .booking-count {
   color:red;
 }
+.login_link a {
+    padding: 6px;
+    border-radius: 8px;
+    background: none;
+}
