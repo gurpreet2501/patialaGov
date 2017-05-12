@@ -68,6 +68,8 @@ class Admin extends CI_Controller {
       $crud->columns('username','email','profile_pic','department','block','room_no');
       $crud->field_type('password', 'password');
       $crud->field_type('role', 'hidden','employee');
+      $crud->field_type('verified', 'hidden',1);
+      $crud->field_type('otp', 'hidden');
       $crud->required_fields('username','password','email','full_name');
       if($crud->getState() == 'add')
         $crud->unique_fields('username','email');
