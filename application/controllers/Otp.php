@@ -51,12 +51,28 @@ class Otp extends CI_Controller{
       redirect('otp/verify/'.$user_id);
   } 
 
-  function sendOtp($user_id){
-    $data = Models\Users::select('phone_number','otp')->where('id',$user_id)->first();
-    $number = $data->phone_number;
-    $otp = $data->otp;
-    // http://sms.thinkbuyget.com/api.php?username=Gurpreet&password=472186&sender=DGENIT&sendto=919814158141&message=854785  
 
+  function sendOtp($user_id){
+
+    $data = Models\Users::select('phone_number','otp')->where('id', $user_id)->first();
+    $phone = $data->phone_number;
+    $otp = $data->otp;
+    $phone = preg_replace('/[^0-9]/', '', $phone);
+    $phone = '91'.substr($phone, -10);
+    
+    if($this->config->item('site_status') == 'LIVE')
+      $url = "http://sms.thinkbuyget.com/api.php?username=Gurpreet&password=472186&sender=DGENIT&sendto={$phone}&message=Please+enter+your+OTP++{$otp}+to+complete+your+registration.";
+    else
+      $url = '';
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, 0);
+    curl_setopt($ch, CURLOPT_HTTPGET, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $resp = curl_exec ($ch);
+    curl_close ($ch);
+    return true;
   }
 
   

@@ -1,5 +1,5 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-
+use App\Models;
 class Auth extends CI_Controller
 {
 	function __construct()
@@ -61,14 +61,15 @@ class Auth extends CI_Controller
 			$data['errors'] = array();
 
 			if ($this->form_validation->run()){								//validation ok
-				if ($this->tank_auth->login(
+				if (
+					$this->tank_auth->login(
           $this->form_validation->set_value('login'),
           $this->form_validation->set_value('password'),
           $this->form_validation->set_value('remember'),
           $data['login_by_username'],
           $data['login_by_email'])) {		
         	
-          $select=array('role');
+          $select=array('role','verified');
           $usr_type=lako::get('objects')->get('users')->read(array(
           'select'  =>   $select,
           'where' => array('id', $this->tank_auth->get_user_id())
@@ -78,8 +79,14 @@ class Auth extends CI_Controller
              redirect('/admin');    // Redirecting to admin panel 
           else if($usr_type[0]['role']=='employee')
              redirect('/employee');  
-          else if($usr_type[0]['role']=='user')
-             redirect('/search');  
+          else if($usr_type[0]['role']=='user'){
+          	
+          	if(!$usr_type[0]['verified']){
+          	  redirect('auth/logout/?msg=notVerified');
+          	}
+          	
+            redirect('/search');  
+          }   
           else if(isset($_GET['cur_url'])){  //Redirecting to custom url 
              redirect($_GET['cur_url']);
           }
@@ -189,9 +196,13 @@ class Auth extends CI_Controller
 					$data['site_name'] = $this->config->item('website_name', 'tank_auth');
 				  
            lako::get('objects')->get('users')->update($usr_fields, array('id',$data['user_id'])); // Entering user Information in table. i.e. Name, phone ,address , etc
-			
-					 redirect('/otp/verify/'. $data['user_id']);
 					 
+					 if($this->config->item('site_status') == 'LIVE'){
+						 redirect('/otp/verify/'. $data['user_id']);
+					 }
+
+					 Models\Users::where('id',$data['user_id'])->update(['verified' => 1]);
+
 					if ($email_activation) {									// send "activate" email
 						$data['activation_period'] = $this->config->item('email_activation_expire', 'tank_auth') / 3600;
 
@@ -618,6 +629,8 @@ class Auth extends CI_Controller
 		}
 		return TRUE;
 	}
+
+	
 
 }
 
