@@ -17,6 +17,7 @@
 	</div>
 </div>
 </div> <!-- container ends -->
+
 	<script type="text/javascript" src="<?=base_url()?>/js/jquery.js"></script>
 	<script type="text/javascript" src="<?=base_url()?>/js/slider.js"></script>
 	<script type="text/javascript" src="<?=base_url()?>/js/locales.js"></script>
@@ -41,10 +42,30 @@ $('.carousel').carousel({
     }
   }
 });
+ 
  jQuery('#booking_form').validate();
+
  if(!jQuery('table').hasClass('table-bordered'))
  		jQuery('table').addClass('table table-bordered')
 
+ if(!jQuery('.col-xs-6 ul').hasClass('list-group')){
+ 		jQuery('.col-xs-6 ul').addClass('list-group');
+ 		jQuery('.col-xs-6 ul li').addClass('list-group-item');
+ }
+ if(!jQuery('.col-xs-6 ol').hasClass('list-group')){
+ 		jQuery('.col-xs-6 ol').addClass('list-group');
+ 		jQuery('.col-xs-6 ol li').addClass('list-group-item');
+ }
+
+// Setting images dynamic load
+jQuery(function(){
+	var images = $('img');
+	$(images).each(function( index ,val) {
+		var str = this.src;
+  	var img = str.split('images')[1];
+		this.src = window.location.origin+'/images'+img;
+	});
+});
 
 </script>
 
@@ -52,5 +73,8 @@ $('.carousel').carousel({
 						function googleTranslateElementInit() {
 						  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'hi,pa,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
 						}
-				</script>
-				<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
+				

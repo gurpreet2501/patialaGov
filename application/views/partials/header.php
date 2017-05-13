@@ -51,19 +51,19 @@
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Patiala <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-										<li><a href="#">Introduction</a></li>
-										<li><a href="#">Area</a></li>
-										<li><a href="#">Climate</a></li>
-										<li><a href="#">Sub-divisions</a></li>
+										<li><li><a href="<?=site_url()?>/page/introduction">Introduction</a></li>
+										<li><li><a href="<?=site_url()?>/page/area">Area</a></li>
+										<li><li><a href="<?=site_url()?>/page/climate">Climate</a></li>
+										<li><li><a href="<?=site_url()?>/page/sub-divisions">Sub-divisions</a></li>
 			          </ul>
 			        </li>
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-										<li><a href="<?=site_url()?>/page/introduction">Introduction</a></li>
-										<li><a href="#">Culture and Tradition</a></li>
-										<li><a href="#">Architecture</a></li>
-										<li><a href="#">Gates of Patiala	</a></li>
+										<li><a href="<?=site_url()?>/page/history-introduction">Introduction</a></li>
+										<li><a href="<?=site_url()?>/page/culture-and-tradition">Culture and Tradition</a></li>
+										<li><a href="<?=site_url()?>/page/architecture">Architecture</a></li>
+										<li><a href="<?=site_url()?>/page/gates-of-patiala">Gates of Patiala	</a></li>
 			          </ul>
 			        </li>
 			        <li class="dropdown">
@@ -93,7 +93,7 @@
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">District At a Glance<span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-										<li><a href="#">Demographic Statistics</a></li>
+										<li><a href="<?=site_url()?>/page/demographic-statistics">">Demographic Statistics</a></li>
 										<li><a href="#">Educational Institutes</a></li>
 										<li><a href="#">Village Directory</a></li>
 			          </ul>
@@ -112,5 +112,5 @@
         <p><?=htmlentities($msg['msg']);?></p>
       </div>
     <?php endif; ?>
-
+<body>
 <!-- Header Ends-->
