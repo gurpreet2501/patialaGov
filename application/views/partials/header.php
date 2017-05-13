@@ -69,32 +69,33 @@
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Places to Visit <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-										<li><a href="#">Tourist Attractions/Historical Places</a></li>
-										<li><a href="#">Eateries/Entertainment/Sports</a></li>
-										<li><a href="#">Address of Guest Houses etc</a></li>
+										<li><a href="<?=site_url('page/places-to-visit')?>">Tourist Attractions/Historical Places</a></li>
+										<li><a href="<?=site_url('page/eateries')?>">Eateries/Entertainment/Sports</a></li>
+										<li><a href="<?=site_url('page/address-of-guest-houses')?>">Address of Guest Houses etc</a></li>
 			          </ul>
 			        </li>
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">District Administration <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-										<li><a href="#">D.C. Profile</a></li>
+										<li><a href="<?=site_url('page/dc-profile')?>">D.C. Profile</a></li>
 										<li><a href="<?=site_url()?>/page/role-of-deputy-commissioner">Role of Deputy Commissioner</a></li>
 										<li><a href="#">Role of ADC</a></li>
 										<li><a href="#">Court Work of Branch Officers</a></li>
+										<li><a href="<?=site_url()?>/page/list-of-deputy-commissioner">List of Deputy Commissioners</a></li>
 			          </ul>
 			        </li>
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">District Economy <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-										<li><a href="#">Industry</a></li>
-										<li><a href="#">Agriculture</a></li>
+										<li><a href="<?=site_url()?>/page/industry">Industry</a></li>
+										<li><a href="<?=site_url()?>/page/industry">Agriculture</a></li>
 			          </ul>
 			        </li>
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">District At a Glance<span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-										<li><a href="<?=site_url()?>/page/demographic-statistics">">Demographic Statistics</a></li>
-										<li><a href="#">Educational Institutes</a></li>
+										<li><a href="<?=site_url()?>/page/demographic-statistics">Demographic Statistics</a></li>
+										<li><a href="<?=site_url()?>/page/educational-institutes">Educational Institutes</a></li>
 										<li><a href="#">Village Directory</a></li>
 			          </ul>
 			        </li>

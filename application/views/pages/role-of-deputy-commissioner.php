@@ -1,10 +1,4 @@
-<?php $this->load->view('partials/header') ?>
-<div class="container">
-	<div class="row">
-		<div class="col-xs-3">
-			<?php $this->load->view('partials/leftSidebar') ?>
-		</div>
-		<div class="col-xs-6">
+
    		<div class="panel-group" id="accordion">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -171,15 +165,5 @@
               <div class="panel-body">Appeals under Stamps Act</div>
             </div>
 
-          </div> <!-- Panel ends --> -->
+          </div> <!-- Panel ends --> 
 
-
-  <!-- ---------------------------- -->
-</div>
-		</div>
-		<div class="col-xs-3">
-			<?php $this->load->view('partials/rightSidebar') ?>
-		</div>
-	</div>
-</div>
-<?php $this->load->view('partials/footer') ?>

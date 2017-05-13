@@ -1,10 +1,3 @@
-<?php $this->load->view('partials/header') ?>
-<div class="container">
-	<div class="row">
-		<div class="col-xs-3">
-			<?php $this->load->view('partials/leftSidebar') ?>
-		</div>
-		<div class="col-xs-6">
     <blockquote>
                             <p><a name="Introduction"></a></p>
                             <p><img src="<?=base_url('images/Image43.jpg')?>" width="317" height="255"> </p>
@@ -300,10 +293,4 @@
                             </tbody></table>
                             <p><img src="<?=base_url('images/Image44.jpg')?>" width="500" height="811" alt=""></p>
 <!--  Page Contents Ends Here -->                        </blockquote>
-		</div>
-		<div class="col-xs-3">
-			<?php $this->load->view('partials/rightSidebar') ?>
-		</div>
-	</div>
-</div>
-<?php $this->load->view('partials/footer') ?>
+		

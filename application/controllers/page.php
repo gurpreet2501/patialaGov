@@ -9,7 +9,7 @@ class Page extends CI_Controller{
   
   //$empid coming from search page
   public function index($post_name){
-    $this->load->view('pages/'.$post_name);
+    $this->load->view('pages/page-basic-structure',['page_name' => $post_name]);
   }
   
 }

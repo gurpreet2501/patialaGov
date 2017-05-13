@@ -1,10 +1,3 @@
-<?php $this->load->view('partials/header') ?>
-<div class="container">
-	<div class="row">
-		<div class="col-xs-3">
-			<?php $this->load->view('partials/leftSidebar') ?>
-		</div>
-		<div class="col-xs-6">
 		<h3>Gates In Patiala</h3>
 			<p>&nbsp;&nbsp;Maharaja Narendra Singh (1845–1862) fortified the city of Patiala 
 			by constructing ramparts and ten gates around the city:</p>
@@ -30,10 +23,4 @@
 				<img src="../images\sirhindi.JPG" width="200px" border="0">
 				<img src="../images\sunami.JPG" width="200px" border="0">
 				</marquee>
-		</div>
-		<div class="col-xs-3">
-			<?php $this->load->view('partials/rightSidebar') ?>
-		</div>
-	</div>
-</div>
-<?php $this->load->view('partials/footer') ?>
+		

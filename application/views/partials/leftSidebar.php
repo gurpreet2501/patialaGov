@@ -13,13 +13,13 @@
 	<ul class="list-group">
 		  <li class="list-group-item">DevelopmentStories</li>
 		  <li class="list-group-item">Picture Gallery</li>
-		  <li class="list-group-item">PbGovtWebsites</li>
-		  <li class="list-group-item">Punjab Districts</li>
+		  <li class="list-group-item"><a href="http://goidirectory.nic.in/state_departments.php?ou=PB">PbGovtWebsites</a></li>
+		  <li class="list-group-item"><a href="http://goidirectory.nic.in/state_districts.php?ou=PB&ct=E042">Punjab Districts</a></li>
 		  <li class="list-group-item">Patiala offices</li>
 		  <li class="list-group-item">GOI Offices</li>
 		  <li class="list-group-item">News Channels</li>
 		  <li class="list-group-item">Maps</li>
 		  <li class="list-group-item">Contact Numbers</li>
-	    <li class="list-group-item">Child Line Patiala</li>
+	    <li class="list-group-item"><a href="<?=site_url('page/childline')?>">Child Line Patiala</a></li>
 	</ul>
 	<!-- ---------------------- -->

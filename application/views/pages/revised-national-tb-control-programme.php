@@ -1,10 +1,4 @@
-<?php $this->load->view('partials/header') ?>
-<div class="container">
-	<div class="row">
-		<div class="col-xs-3">
-			<?php $this->load->view('partials/leftSidebar') ?>
-		</div>
-		<div class="col-xs-6">
+
    		<blockquote>
                             <p align="center" class="Heading">District
                             TB Control Society Patiala</p>
@@ -365,10 +359,4 @@
                                 </tr>
                             </tbody></table>
                         </blockquote>
-		</div>
-		<div class="col-xs-3">
-			<?php $this->load->view('partials/rightSidebar') ?>
-		</div>
-	</div>
-</div>
-<?php $this->load->view('partials/footer') ?>
+		

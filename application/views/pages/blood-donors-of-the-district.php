@@ -1,10 +1,4 @@
-<?php $this->load->view('partials/header') ?>
-<div class="container">
-	<div class="row">
-		<div class="col-xs-3">
-			<?php $this->load->view('partials/leftSidebar') ?>
-		</div>
-		<div class="col-xs-6">
+
     <blockquote>
 		<a name="Health Profile"></a>
 	    <p align="justify"><b>P</b>atiala has a Government Medical College ,a Dental college and an Ayurvedic College, each of them having hospital attached to them.  The Government Medical college is linked to the well known Rajindra Hospital .Opened in 1954, this hospital is the largest in Punjab, offering specialized services in Surgery, Obstetrics, Plastic Surgery, Ultrasonography and Radiotherapy. The Rajindra Hospital is supported by Mata Kaushalaya Devi Hospital which was originally founded in 1890 as the Lady Dufferin Hospital. The rest of the district is served by a vast network of civil hospitals, Primary Health Centres and Dispensaries.</p>
@@ -253,10 +247,4 @@
 		<!--  Page Contents Ends Here -->	
 		
 		</blockquote>
-		</div>
-		<div class="col-xs-3">
-			<?php $this->load->view('partials/rightSidebar') ?>
-		</div>
-	</div>
-</div>
-<?php $this->load->view('partials/footer') ?>
+		

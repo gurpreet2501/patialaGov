@@ -1,10 +1,4 @@
-<?php $this->load->view('partials/header') ?>
-<div class="container">
-	<div class="row">
-		<div class="col-xs-3">
-			<?php $this->load->view('partials/leftSidebar') ?>
-		</div>
-		<div class="col-xs-6">
+
     <blockquote>
 			
 <p align="justify"> "One of the basic human rights is the Right to See. We have to ensure that no citizen goes blind needlessly, or being blind, does not remain so, if, by reasonable deployment of skills and resources, his sight can be prevented from deterioration, or if already lost, can be restored."</p>
@@ -91,10 +85,4 @@ Rs. 750/- as per the guidelines of Govt. of India. </b></p>
 <li>	Common causes include Vitamin-A deficiency, eye infections and injuries;</li>
 <li>	Only treatment available is corneal transplantation;</li></ul>
 </blockquote>
-		</div>
-		<div class="col-xs-3">
-			<?php $this->load->view('partials/rightSidebar') ?>
-		</div>
-	</div>
-</div>
-<?php $this->load->view('partials/footer') ?>
+		

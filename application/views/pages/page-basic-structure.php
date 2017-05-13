@@ -5,7 +5,7 @@
 			<?php $this->load->view('partials/leftSidebar') ?>
 		</div>
 		<div class="col-xs-6">
-                <!-- Content -->
+				<?php $this->load->view('pages/'.$page_name);?>
 		</div>
 		<div class="col-xs-3">
 			<?php $this->load->view('partials/rightSidebar') ?>
