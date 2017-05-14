@@ -18,18 +18,6 @@ class Employee extends CI_Controller {
     redirect('employee/bookings');
 	}
 
-  
-
-  // function encrypt_password_callback($post_array, $primary_key) {
-    
-  //   if($post_array['status'] == 'Completed') 
-  //     $post_array['completion_date'] = date('Y-m-d H:i:s');
-
-  //   return $post_array;
-  // }
-
-
- 
  
   function on_update_encrypt_password_callback($post_array){
 		if($post_array['password'] != '__MARKF3D__'){
@@ -67,6 +55,24 @@ class Employee extends CI_Controller {
     $output = $crud->render();
     $this->load->view('admin/crud.php',$output);
   }
+   
+   function employeeBookings(){
+    if(isset($_POST['booking_id'])){
+        $data = $_POST; 
+        M\Feedbacks::create($data);
+        M\Booking::where('id',$data['booking_id'])->update(['feedback_sent' => true]);
+        redirect('employee/employeeBookings');
+    }
+
+    $bookings = M\Booking::where('employee_id',user_id())->where('booking_status','Accepted')->where('feedback_sent',false)->get();
+    $this->load->view('booking/employee-booking-list',['bookings' => $bookings]);
+  }
+
+  function bookingFeedbacks(){
+    $feedbacks = M\Feedbacks::where('user_id', user_id())->with('booking')->get();
+    $this->load->view('feedbacks/employee-feedbacks',['feedbacks' => $feedbacks]);
+  }
+
 
 
   public function update_password(){

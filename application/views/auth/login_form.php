@@ -36,7 +36,6 @@ $register_action = site_url('auth/register');?>
       // echo form_open($this->uri->uri_string()); ?>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
-
           <div class="auth__forms_container">
            <div class="auth_forms">
             <div class="row">

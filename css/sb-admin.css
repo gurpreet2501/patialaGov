@@ -272,3 +272,6 @@ form#orderSearch input:first-child {
     color:green;
     font-weight: bold;
 }
+textarea.form-control.feed-back {
+    height: 113px !important;
+}

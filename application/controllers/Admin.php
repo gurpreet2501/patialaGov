@@ -38,7 +38,7 @@ class Admin extends CI_Controller {
       }
     }
     
-    $this->load->view('admin/bookingsCount',['bookings' => $emp]);
+    $this->load->view('admin/bookingsCount', ['bookings' => $emp]);
 	}
 
   public function timeSlots($lang=false){
@@ -51,6 +51,15 @@ class Admin extends CI_Controller {
     $crud->columns('name');
     $output = $crud->render();
     $this->load->view('admin/crud.php',$output);
+  }
+
+ function feedbacks(){
+    $feedbacks = M\Feedbacks::with('booking')->with('employee')->get();
+    $this->load->view('feedbacks/admin-feedbacks',['feedbacks' => $feedbacks]);
+  }
+  function feedbackDetails($id){
+    $feedbacks = M\Feedbacks::where('id',$id)->with('booking')->with('employee')->get();
+    $this->load->view('feedbacks/admin-feedback-details',['feedbacks' => $feedbacks]);
   }
 
   public function users(){

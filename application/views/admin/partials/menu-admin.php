@@ -12,6 +12,9 @@
       <a href='<?php echo site_url('/admin/bookingsCount')?>'>Todays Booking Count of Employees</a> 
     </li>
     <li class="active">
+      <a href='<?php echo site_url('/admin/feedbacks')?>'>Employee Feedbacks</a> 
+    </li>
+    <li class="active">
       <a href='<?php echo site_url('/admin/update_password')?>'>Update Password</a> 
     </li>
 </ul>
