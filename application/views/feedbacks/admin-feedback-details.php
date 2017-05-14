@@ -11,6 +11,17 @@
     <div class="feedback-box">
       <div class="alert alert-success"><?=$feedback->feedback?></div>
     </div>
+    <div class="details">
+        <h3>Employee Details</h3>
+        <ul class="list-group">
+          <li class="list-group-item">Emp Name: <?=$feedback->employee->full_name?></li>
+          <li class="list-group-item">Phone No.: <?=$feedback->employee->phone_number?></li>
+          <li class="list-group-item">Designation: <?=$feedback->employee->designation?></li>
+          <li class="list-group-item">Block: <?=$feedback->employee->block?></li>
+          <li class="list-group-item">Room No.: <?=$feedback->employee->room?></li>
+          <li class="list-group-item">Department: <?=$feedback->employee->department?></li>
+          </ul>
+        </div>
   <div class="details">
     <h3>User Details</h3>
       <ul class="list-group">
@@ -22,18 +33,8 @@
         <li class="list-group-item">Date: <?=$feedback->booking->date?></li>
         <li class="list-group-item">Timeslot: <?=getTimeSlotName($feedback->booking->time_slot)?></li>
         </ul>
-
-       <div class="details">
-        <h3>Employee Details</h3>
-        <ul class="list-group">
-          <li class="list-group-item">Emp Name: <?=$feedback->employee->full_name?></li>
-          <li class="list-group-item">Phone No.: <?=$feedback->employee->phone_number?></li>
-          <li class="list-group-item">Designation: <?=$feedback->employee->designation?></li>
-          <li class="list-group-item">Block: <?=$feedback->employee->block?></li>
-          <li class="list-group-item">Room No.: <?=$feedback->employee->room?></li>
-          <li class="list-group-item">Department: <?=$feedback->employee->department?></li>
-          </ul>
-        </div>
+    </div>    
+       
 <?php endforeach; ?>
 
   </div>

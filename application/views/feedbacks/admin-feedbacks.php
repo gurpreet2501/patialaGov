@@ -13,7 +13,11 @@
       <th>Feedback</th>
     </tr>
 
-<?php foreach ($feedbacks as $key => $feedback): ?>    
+<?php foreach ($feedbacks as $key => $feedback):
+    if(!isset($feedback->booking)){
+      continue;
+    }
+ ?>    
     <tr>
       <td><?=$feedback->booking->name?></td>
       <td><?=$feedback->booking->email?></td>

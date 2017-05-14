@@ -1,6 +1,7 @@
 <?php $this->load->view('admin/partials/header'); ?>
 <div class="row">
   <div class="col-lg-12">
+  <?php if(count($feedbacks)): ?>
     <table class="table table-stripped">
     <tr>
       <th>Person Name</th>
@@ -13,7 +14,11 @@
       <th>Feedback</th>
     </tr>
 
-<?php foreach ($feedbacks as $key => $feedback):?>    
+<?php foreach ($feedbacks as $key => $feedback): 
+      if(!isset($feedback->booking)){
+        continue;
+      }
+?>      
     <tr>
       <td><?=$feedback->booking->name?></td>
       <td><?=$feedback->booking->email?></td>
@@ -27,6 +32,9 @@
     
 <?php endforeach; ?>
     </table>
+  <?php else: ?>
+    <div class="text-center">No Records Found.</div>
+  <?php endif; ?>
   </div>
 </div>
 <? $this->load->view('admin/partials/footer') ?>

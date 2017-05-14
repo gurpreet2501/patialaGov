@@ -70,6 +70,7 @@ class Employee extends CI_Controller {
 
   function bookingFeedbacks(){
     $feedbacks = M\Feedbacks::where('user_id', user_id())->with('booking')->get();
+   
     $this->load->view('feedbacks/employee-feedbacks',['feedbacks' => $feedbacks]);
   }
 
