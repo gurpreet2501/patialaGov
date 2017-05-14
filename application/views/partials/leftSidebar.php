@@ -13,13 +13,12 @@
 	<h3>Important Links</h3>
 	<ul class="list-group">
 		  <li class="list-group-item"><a href="<?=site_url('page/development-stories.php')?>">Development Stories</a></li>
-		  <li class="list-group-item">Picture Gallery</li>
 		  <li class="list-group-item"><a href="http://goidirectory.nic.in/state_departments.php?ou=PB">PbGovtWebsites</a></li>
 		  <li class="list-group-item"><a href="http://goidirectory.nic.in/state_districts.php?ou=PB&ct=E042">Punjab Districts</a></li>
 		  <li class="list-group-item"><a href="https://india.gov.in/">GOI Offices</a></li>
 		  <li class="list-group-item"><a href="<?=site_url('page/news-channels')?>">News Channels</li>
-		  <li class="list-group-item">Maps</li>
-		  <li class="list-group-item">Contact Numbers</li>
+		  <li class="list-group-item"><a href="<?=site_url('page/maps')?>">Maps</a></li>
+		  <li class="list-group-item"><a href="<?=site_url('page/contact-numbers')?>">Contact Numbers</a></li>
 	    <li class="list-group-item"><a href="<?=site_url('page/childline')?>">Child Line Patiala</a></li>
 	</ul>
 	<!-- ---------------------- -->
