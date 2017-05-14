@@ -167,3 +167,4 @@
 
           </div> <!-- Panel ends --> 
 
+</div> <!-- sidebar div ends -->
