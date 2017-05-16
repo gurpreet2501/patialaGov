@@ -14,7 +14,7 @@ class Booking extends CI_Controller{
 
     if(!empty($_POST)){
       $data = $_POST;
-      $user = Models\Users::where('id',user_id())->first();
+      $user = Models\Users::where('id', user_id())->first();
       $data['name'] = $user->full_name;
       $data['email'] = $user->email;
       $data['age'] = $user->age;
@@ -23,6 +23,15 @@ class Booking extends CI_Controller{
       $data['user_id'] = user_id();
       $originalDate = $data['date'];
       $data['date'] = date("Y-m-d", strtotime($originalDate));
+
+      if($data['date'] < date('Y-m-d')){
+        lako::get('flash')->set('global',array(
+          'type'  => 'danger',
+          'msg'   => 'Please Enter Correct Date. Date Previous than today is not accepted.'
+        ));
+      
+        redirect('booking/index/'.$data['employee_id']);  
+      }
       
       $this->checkIfSameBookingLessThanTenDays($data);   
 
@@ -34,7 +43,7 @@ class Booking extends CI_Controller{
       
         redirect('booking/index/'.$data['employee_id']);
       }
-
+   
       Models\Booking::create($data);
       sendEmail($data);
       lako::get('flash')->set('global',array(
@@ -69,8 +78,9 @@ class Booking extends CI_Controller{
   
     $booking = Models\Booking::where('employee_id',$data['employee_id'])
                     ->where('date', $data['date'])
+                    ->where('booking_status','!=' ,'Canceled')
                     ->where('time_slot', $data['time_slot'])->first();
-                   
+              
     if($booking)                
       return true;
 
@@ -79,6 +89,11 @@ class Booking extends CI_Controller{
 
   function checkBookings(){
      $bookings = [];
+     
+     if(isset($_POST['booking_id'])){
+      Models\Booking::where('id',$_POST['booking_id'])->update(['booking_status' => 'Canceled']);
+     }
+
      $bookings = Models\Booking::where('user_id', user_id())->get(); 
      if(!empty($bookings)){
       $bookings = $bookings->toArray();
@@ -102,6 +117,8 @@ class Booking extends CI_Controller{
       where user_id={$data['user_id']} 
       AND 
       employee_id={$data['employee_id']}
+      AND 
+      booking_status != 'Canceled'
       AND 
       date >= '{$previousDate}' AND date <= '{$data['date']}' 
       ";

@@ -37,18 +37,25 @@
 				  </div>
 				  <button type="submit" class="btn btn-danger">Search</button>
 				</form>
-				<?php if(count($results)): ?>
+				<?php if(count($results)):?>
 					<table class="table table-striped">
 					  <tr>
+					  	<th>Pic</th>
 					  	<th>Name</th>
 					  	<th>Department</th>
 					  	<th>Phone</th>
 					  	<th>Block</th>
 					  	<th>Room</th>
-					  	<th></th>
+					  	<th>Select</th>
 					  </tr>
-						<?php foreach($results as $emp):?>	  
+						<?php foreach($results as $emp):
+						$profilePic = 'avatar.png';
+						if(!empty($emp->profile_pic))
+							$profilePic = $emp->profile_pic;
+
+						?>	  
 					  <tr>
+					  	<td  width="10%"><div class="emp-profile-pic text-center"><img src="<?=base_url('images\\').$profilePic?>" width="150px" height="150px"  /></div></td>
 					  	<td><?=$emp->full_name?></td>
 					  	<td><?=$emp->department?></td>
 					  	<td><?=$emp->phone_number?></td>

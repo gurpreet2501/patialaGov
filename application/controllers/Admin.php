@@ -73,7 +73,7 @@ class Admin extends CI_Controller {
       $crud->set_theme('datatables');
       $crud->set_table('users');
       $crud->set_subject('Employees');
-      $crud->set_field_upload('profile_pic','assets/uploads/files');
+      $crud->set_field_upload('profile_pic','images');
       $crud->columns('username','email','profile_pic','department','block','room_no');
       $crud->field_type('password', 'password');
       $crud->field_type('role', 'hidden','employee');
@@ -202,9 +202,20 @@ class Admin extends CI_Controller {
     if($crud->getState() == 'edit')
       $crud->fields('booking_status');
     $crud->unset_add();
-    $crud->columns('name','email','date','time_slot','booking_status');
+    $crud->display_as('employee_id','Employee Details');
+    $crud->columns('name','email','date','time_slot','booking_status','subject','meeting_purpose','employee_id');
+    $crud->callback_column('employee_id',array($this,'get_employee_details'));
     $output = $crud->render();
     $this->load->view('admin/crud.php',$output);
+  }
+
+  function get_employee_details($value, $row){
+    $data= M\Users::select('full_name','email','phone_number','profile_pic','sex','designation')->where('id',$value)->first();
+    $string =  $data->full_name.",<br/>";
+    $string .= $data->email.",<br/>";
+    $string .= $data->phone_number.",<br/>";
+    $string .= $data->designation.".<br/>";
+    return $string;
   }
 
   function acceptedBookings(){

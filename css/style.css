@@ -524,3 +524,8 @@ p b {
     color: red;
     font-size: 17px;
 }
+
+
+.emp-profile-pic img {
+    border-radius: 50%;
+}

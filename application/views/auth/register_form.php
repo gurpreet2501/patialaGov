@@ -68,7 +68,7 @@ $captcha = array(
         <?php } ?>
          <div class="form-group">
             <label for="<?=$email['id']?>">Email</label>
-            <input type="text" name="email" class="form-control required" id="email" value="<?=set_value('email');?>" placeholder="Enter Email">
+            <input type="email" name="email" class="form-control required" id="email" value="<?=set_value('email');?>" placeholder="Enter Email">
         <?php if(isset($errors[$email['name']])):?>
             <div class="form-errors">
              <?php echo form_error($email['name']); ?><?php echo isset($errors[$email['name']])?$errors[$email['name']]:''; ?>
