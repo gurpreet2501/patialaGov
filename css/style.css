@@ -529,3 +529,9 @@ p b {
 .emp-profile-pic img {
     border-radius: 50%;
 }
+span.glyphicon.glyphicon-hand-right {
+    margin-right: 10px;
+}
+.list-group {
+    text-align: left;
+}

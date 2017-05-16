@@ -48,14 +48,43 @@ class Employee extends CI_Controller {
     $crud->set_relation('time_slot','time_slots','name');
     $crud->where('employee_id',user_id());
     if($crud->getState() == 'edit')
-      $crud->fields('booking_status');
+    $crud->fields('booking_status');
     $crud->unset_add();
     $crud->unset_delete();
     $crud->columns('name','email','date','time_slot','booking_status');
     $output = $crud->render();
     $this->load->view('admin/crud.php',$output);
   }
+
+  function queries(){
+    $crud = new grocery_CRUD();
+    $crud->set_theme('datatables');
+    $crud->set_table('queries');
+    $crud->set_subject('Queries');
+    $crud->where('employee_id',user_id());
+    $crud->unset_add();
+    $crud->unset_texteditor(['question','answer']);
+    $crud->field_type('question','readonly');
+    $crud->field_type('user_id','hidden');
+    $crud->field_type('created_at','hidden');
+    $crud->field_type('updated_at','hidden');
+    $crud->field_type('employee_id','hidden');
+    $crud->display_as('user_id','User Details');
+    $crud->callback_column('user_id',array($this,'get_user_details'));
+    $crud->unset_delete();
+    $crud->columns('question','answer','user_id');
+    $output = $crud->render();
+    $this->load->view('admin/crud.php',$output);
+  }
    
+  function get_user_details($value, $row){
+    $data= M\Users::select('full_name','email','phone_number','profile_pic','sex','designation')->where('id',$value)->first();
+    $string =  $data->full_name.",<br/>";
+    $string .= $data->email.",<br/>";
+    $string .= $data->phone_number.",<br/>";
+    $string .= $data->designation.".<br/>";
+    return $string;
+  }
    function employeeBookings(){
     if(isset($_POST['booking_id'])){
         $data = $_POST; 

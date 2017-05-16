@@ -26,5 +26,24 @@
 	            
 	        </div>
 	    </div>
+	    <br/>
+	    <div class="panel panel-default">
+	        <div class="panel-heading" role="tab" id="userQueries">
+	            <h4 class="panel-title"> <a href="#userQuery" class="" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="userQuery">User Queries </a> </h4> </div>
+			         <div class="panel-collapse collapse in" role="tabpanel" id="userQuery" aria-labelledby="userQueries" aria-expanded="true">
+			         <?php foreach (getQueries() as $key => $query): ?>
+				         <div class="list-group">
+									  <a href="#" class="list-group-item">
+									    <h4 class="list-group-item-heading">
+									    	<span class="glyphicon glyphicon-hand-right" ></span><?=$query->question?>
+									    </h4>
+									    <p class="list-group-item-text">Ans. <?=$query->answer?></p>
+									  </a>
+									</div>
+								<?php endforeach;?>	
+			         
+			            
+			        </div>
+	    </div>
 </div>
 

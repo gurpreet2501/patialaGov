@@ -9,6 +9,9 @@
       <a href='<?php echo site_url('/employee/bookingFeedbacks')?>'>Feedbacks</a> 
     </li>
     <li class="active">
+      <a href='<?php echo site_url('/employee/queries')?>'>User Queries</a> 
+    </li>
+    <li class="active">
       <a href='<?php echo site_url('/employee/update_password')?>'>Update Password</a> 
     </li>
 </ul>

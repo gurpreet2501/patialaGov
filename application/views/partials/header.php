@@ -17,15 +17,17 @@
 <!-- Header starts -->
 	<div class="header">
 		<div class="row">
-			<div class="col-xs-8">
+			<div class="col-xs-6">
 				<a href="<?=site_url()?>"><h1 class="site-title">Official Website Of District Patiala</h1></a>
 			</div>
-		
-			<div class="col-xs-4">
+			<div class="col-xs-6">
 			<?php if($this->tank_auth->get_user_id()): ?>
-				<div class="login_link"><a class="btn-danger" href="<?=site_url('booking/checkBookings')?>">Check Your Bookings</a></div>
-				<br/>
-				<div class="login_link"><a class="btn-danger" href="<?=site_url('auth/logout')?>">Logout</a></div>
+				<div class="login_link">
+					<a class="btn-danger" href="<?=site_url('queries/submit')?>">Submit Query</a> &nbsp; | &nbsp;
+					<a class="btn-danger" href="<?=site_url('queries/show')?>">Query Answers</a> &nbsp; | &nbsp;
+					<a class="btn-danger" href="<?=site_url('booking/checkBookings')?>">Check Your Bookings</a>&nbsp; | &nbsp;
+					<a class="btn-danger" href="<?=site_url('auth/logout')?>">Logout</a>
+				</div>
 		<?php else: ?>		
 				<div class="login_link"><a class="btn-danger" href="<?=site_url('auth/login')?>">Login</a><a class="btn-danger" href="<?=site_url('auth/register')?>">Register</a></div>
 		
